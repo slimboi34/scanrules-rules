@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-20",
-  "_about": "Scam Check rules. A weighted score from these signals decides the verdict. The on-device model only explains; it never decides. Publish new versions to https://slimboi34.github.io/scanrules-rules/scamchecker.json with a higher version number.",
+  "_about": "Twice Shy rules. A weighted score from these signals decides the verdict. The on-device model only explains; it never decides. Publish new versions to https://slimboi34.github.io/scanrules-rules/scamchecker.json with a higher version number.",
 
   "thresholds": { "scam": 9, "likely": 5, "unsure": 2 },
 

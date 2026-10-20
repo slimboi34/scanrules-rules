@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-20",
-  "_about": "Site Docs rules. Every document type, lead time, renewal link and trade pack lives here, not in Swift. Guidance only: always check the official site.",
+  "_about": "Hivis rules. Every document type, lead time, renewal link and trade pack lives here, not in Swift. Guidance only: always check the official site.",
   "reminderDays": [60, 30, 7],
   "reminderHour": 9,
   "showModeSeconds": 60,
