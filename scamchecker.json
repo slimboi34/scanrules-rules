@@ -1,0 +1,369 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "_about": "Scam Check rules. A weighted score from these signals decides the verdict. The on-device model only explains; it never decides. Publish new versions to https://slimboi34.github.io/scanrules-rules/scamchecker.json with a higher version number.",
+
+  "thresholds": { "scam": 9, "likely": 5, "unsure": 2 },
+
+  "sourceBase": { "sms": 0, "email": 0, "screenshot": 0, "call": 1, "letter": 0, "doorstep": 1 },
+
+  "signals": [
+    {
+      "id": "safe_account",
+      "weight": 9,
+      "reason": "It asks you to move money to a \"safe account\". Banks never do this. This is always a scam.",
+      "phrases": ["safe account", "secure account", "holding account", "move your money", "move my money", "move your savings", "move my savings", "transfer your money", "transfer your savings", "protect your money", "protect your savings", "your account has been compromised", "your account is compromised", "account has been hacked", "new account in your name"]
+    },
+    {
+      "id": "courier",
+      "weight": 9,
+      "reason": "It talks about a courier collecting your card, cash or valuables. The police and banks never do this.",
+      "phrases": ["courier will collect", "send a courier", "sending a courier", "courier to collect", "collect your card", "collect your bank card", "hand over your card", "hand your card", "put your card in an envelope", "withdraw cash", "withdraw the cash", "take out cash", "buy gold", "help with an investigation", "help us with an investigation", "undercover operation", "corrupt staff at your bank", "bank staff are involved"]
+    },
+    {
+      "id": "remote_access",
+      "weight": 7,
+      "reason": "It asks you to install an app or let someone control your phone or computer. Never let a stranger do this.",
+      "phrases": ["anydesk", "teamviewer", "quicksupport", "quick support", "remote access", "remote desktop", "download this app", "install this app", "install the app we send", "access your computer", "access your device", "your computer has a virus", "your computer is infected", "your broadband will be cut off", "your internet will be disconnected", "your router has been hacked", "share your screen"]
+    },
+    {
+      "id": "gift_crypto",
+      "weight": 6,
+      "reason": "It wants payment by gift card, crypto or a money transfer service. Real companies don't take payment this way.",
+      "phrases": ["gift card", "gift cards", "itunes card", "apple card voucher", "apple gift card", "google play card", "google play gift", "steam card", "amazon voucher", "voucher code", "bitcoin", "crypto", "cryptocurrency", "crypto wallet", "usdt", "tether", "western union", "moneygram", "paysafecard"]
+    },
+    {
+      "id": "code_request",
+      "weight": 4,
+      "reason": "It asks for a code, PIN, password or card details. Never share these with anyone, even someone who says they're from your bank.",
+      "phrases": ["verification code", "one-time code", "one time code", "one-time passcode", "one time passcode", "otp", "security code", "6-digit code", "six digit code", "pin", "pin number", "password", "passcode", "card details", "card number", "cvv", "three digits on the back", "3 digits on the back", "sort code and account number", "online banking details", "login details", "log in details"],
+      "patterns": ["\\b(?:send|tell|give|read|share|forward)\\b[^.\\n]{0,40}\\bcode\\b"]
+    },
+    {
+      "id": "confirm_details",
+      "weight": 3,
+      "reason": "It asks you to \"confirm\" or \"update\" your details. Scammers use this to steal them.",
+      "phrases": ["confirm your details", "verify your details", "update your details", "update your payment", "update your billing", "confirm your identity", "verify your identity", "verify your account", "confirm your account", "unusual activity", "suspicious activity", "unusual sign-in", "account has been locked", "account has been suspended", "account will be suspended", "account will be closed", "payment was declined", "payment has failed", "unable to process your payment"]
+    },
+    {
+      "id": "urgency",
+      "weight": 2,
+      "reason": "It tries to rush you. Scammers want you to act before you have time to think.",
+      "phrases": ["urgent", "urgently", "immediately", "right away", "act now", "within 24 hours", "within 24hrs", "within 48 hours", "within 12 hours", "within 2 hours", "today only", "expires today", "expire today", "final notice", "final reminder", "final warning", "last chance", "last reminder", "as soon as possible", "before it's too late", "time is running out", "don't delay", "do not delay"]
+    },
+    {
+      "id": "secrecy",
+      "weight": 4,
+      "reason": "It tells you to keep it secret. Scammers don't want your family or your bank to warn you.",
+      "phrases": ["don't tell anyone", "do not tell anyone", "don't tell the bank", "do not tell the bank", "don't tell bank staff", "keep this confidential", "keep this between us", "keep it between us", "don't tell your family", "do not tell your family", "don't tell dad", "don't tell mum", "if the bank asks", "tell the bank it's for"]
+    },
+    {
+      "id": "family_greeting",
+      "weight": 3,
+      "reason": "It starts like a message from your child (\"Hi Mum\" or \"Hi Dad\"). Scammers send these to thousands of people.",
+      "phrases": ["hi mum", "hey mum", "hello mum", "hiya mum", "mum it's me", "mum its me", "hi mam", "hi mom", "hey mom", "hi dad", "hey dad", "hello dad", "dad it's me", "dad its me", "hi nan", "hi gran", "hi grandma"]
+    },
+    {
+      "id": "new_number",
+      "weight": 4,
+      "reason": "It says they have a new number or a broken phone. Call their old number to check it's really them.",
+      "phrases": ["new number", "my new phone", "this is my new number", "lost my phone", "dropped my phone", "broke my phone", "phone is broken", "phone broke", "phone is smashed", "phone is in for repair", "can't get into my banking", "can't access my banking", "cant access my banking", "locked out of my bank", "save this number", "delete the old number"]
+    },
+    {
+      "id": "money_request",
+      "weight": 3,
+      "reason": "It asks you to pay or send money quickly, often to someone else's account.",
+      "phrases": ["can you pay", "could you pay", "can you send", "could you send", "send me money", "lend me", "transfer me", "need money", "need some money", "pay this for me", "pay a bill for me", "pay it for me", "i'll pay you back", "i will pay you back", "pay you back tomorrow", "send it to this account", "different account"]
+    },
+    {
+      "id": "bank_transfer",
+      "weight": 2,
+      "reason": "It asks for a bank transfer. Once sent, this money is very hard to get back.",
+      "phrases": ["bank transfer", "pay by transfer", "transfer the money", "transfer the payment", "sort code", "account number"]
+    },
+    {
+      "id": "delivery_fee",
+      "weight": 3,
+      "reason": "It says a parcel is waiting for a small fee. Delivery firms rarely text you to pay. This is a very common scam.",
+      "phrases": ["missed delivery", "missed your delivery", "redelivery", "re-delivery", "reschedule your delivery", "reschedule delivery", "unpaid shipping", "shipping fee", "delivery fee", "small fee", "customs fee", "customs charge", "settle the fee", "parcel is waiting", "parcel is on hold", "package is on hold", "parcel could not be delivered", "package could not be delivered", "we tried to deliver", "we attempted to deliver", "address incomplete", "incomplete address", "incorrect address", "held at our depot", "held at our warehouse", "return to sender"]
+    },
+    {
+      "id": "prize_lure",
+      "weight": 3,
+      "reason": "It says you've won something or been chosen. If you didn't enter, you didn't win.",
+      "phrases": ["you have won", "you've won", "you have been selected", "you've been selected", "selected to receive", "claim your prize", "claim your reward", "prize draw", "lottery", "jackpot", "congratulations you", "free gift", "free iphone", "winner"]
+    },
+    {
+      "id": "refund_lure",
+      "weight": 3,
+      "reason": "It offers a refund, rebate or money you are \"owed\". Real refunds don't need you to tap a link or give card details.",
+      "phrases": ["tax refund", "tax rebate", "you are owed", "you're owed", "you are due a refund", "you're due a refund", "eligible for a refund", "eligible for a rebate", "claim your refund", "claim your rebate", "refund of", "overpaid", "overpayment", "energy rebate", "council tax rebate", "council tax refund", "cost of living payment", "winter fuel payment", "energy bill support"]
+    },
+    {
+      "id": "threat",
+      "weight": 3,
+      "reason": "It threatens you with arrest, court, bailiffs or a fine. Scammers use fear to make you act fast.",
+      "phrases": ["arrest", "arrested", "warrant", "court action", "legal action", "bailiff", "bailiffs", "enforcement agents", "prosecuted", "prosecution", "pay the fine", "unpaid fine", "outstanding fine", "penalty charge", "national insurance number has been suspended", "your national insurance number", "license will be revoked", "licence will be revoked", "licence will be suspended", "vehicle will be clamped"]
+    },
+    {
+      "id": "investment",
+      "weight": 4,
+      "reason": "It promises easy or guaranteed money. Real investments never guarantee a return.",
+      "phrases": ["guaranteed return", "guaranteed returns", "guaranteed profit", "double your money", "investment opportunity", "crypto trading", "trading platform", "forex", "risk-free", "risk free", "passive income", "earn from home", "make money fast", "celebrity backed", "as seen on dragons"]
+    },
+    {
+      "id": "cold_trader",
+      "weight": 3,
+      "reason": "It sounds like a cold-calling trader. Never agree to work or pay on the doorstep. Get quotes from traders you choose.",
+      "sources": ["doorstep", "call"],
+      "phrases": ["loose tiles", "your roof", "roof needs", "gutters", "doing work nearby", "working nearby", "in the area", "leftover tarmac", "your drive", "today's price", "special price", "price for today", "only today", "cash only", "pay in cash", "need a deposit", "noticed your", "your trees", "pointing needs", "free check", "free survey", "water board", "from the council", "check your meter"]
+    },
+    {
+      "id": "official_caller",
+      "weight": 2,
+      "reason": "They say they are the police, your bank or an official. Anyone can say that. Hang up and call back on a number you trust.",
+      "sources": ["doorstep", "call"],
+      "phrases": ["police officer", "detective", "from the police", "metropolitan police", "scotland yard", "fraud team", "fraud department", "fraud investigator", "from your bank", "from the bank", "hmrc officer", "from hmrc", "microsoft", "amazon security", "from bt", "from openreach", "from the water board", "from the council"]
+    },
+    {
+      "id": "unknown_payee",
+      "weight": 2,
+      "reason": "It asks you to pay a person or account you don't know. Check the name on the account first.",
+      "phrases": ["pay my friend", "my friend's account", "my landlord's account", "the account details below", "to this account", "account name:"]
+    }
+  ],
+
+  "brands": [
+    { "name": "Royal Mail", "keywords": ["royal mail", "royalmail", "parcelforce"], "domains": ["royalmail.com", "royalmail.co.uk", "parcelforce.com"], "tokens": ["royalmail", "royal-mail", "parcelforce", "rmail"] },
+    { "name": "Evri", "keywords": ["evri", "hermes"], "domains": ["evri.com"], "tokens": ["evri", "hermes"] },
+    { "name": "DPD", "keywords": ["dpd"], "domains": ["dpd.co.uk", "dpdlocal.co.uk", "dpd.com"], "tokens": ["dpd"] },
+    { "name": "Yodel", "keywords": ["yodel"], "domains": ["yodel.co.uk"], "tokens": ["yodel"] },
+    { "name": "DHL", "keywords": ["dhl"], "domains": ["dhl.com", "dhl.co.uk"], "tokens": ["dhl"] },
+    { "name": "HMRC", "keywords": ["hmrc", "hm revenue", "revenue and customs", "revenue & customs"], "domains": ["gov.uk"], "tokens": ["hmrc", "gov-uk", "govuk", "revenue-customs"] },
+    { "name": "DVLA", "keywords": ["dvla", "vehicle tax", "car tax", "driving licence", "driving license"], "domains": ["gov.uk"], "tokens": ["dvla", "vehicletax", "vehicle-tax"] },
+    { "name": "GOV.UK", "keywords": ["gov.uk", "government", "dwp", "department for work and pensions", "universal credit"], "domains": ["gov.uk"], "tokens": ["gov-uk", "govuk", "dwp", "gov.uk-"] },
+    { "name": "NHS", "keywords": ["nhs", "nhs app", "covid pass", "covid-19 test"], "domains": ["nhs.uk", "nhs.net", "gov.uk"], "tokens": ["nhs"] },
+    { "name": "TV Licensing", "keywords": ["tv licensing", "tv licence", "tv license", "tvlicensing"], "domains": ["tvlicensing.co.uk"], "tokens": ["tvlicen", "tv-licen", "tvlicence", "tvlicense"] },
+    { "name": "Amazon", "keywords": ["amazon", "prime membership", "amazon prime"], "domains": ["amazon.co.uk", "amazon.com", "amazon.eu", "amzn.to", "amzn.eu"], "tokens": ["amazon", "amzn", "arnazon"] },
+    { "name": "PayPal", "keywords": ["paypal"], "domains": ["paypal.com", "paypal.co.uk", "paypal.me"], "tokens": ["paypal", "paypa1", "pay-pal"] },
+    { "name": "Apple", "keywords": ["apple id", "icloud", "apple pay", "apple account"], "domains": ["apple.com", "icloud.com"], "tokens": ["apple-id", "appleid", "icloud"] },
+    { "name": "Microsoft", "keywords": ["microsoft", "windows support", "outlook account", "office 365"], "domains": ["microsoft.com", "live.com", "office.com", "outlook.com"], "tokens": ["microsoft", "micros0ft", "office365"] },
+    { "name": "Netflix", "keywords": ["netflix"], "domains": ["netflix.com"], "tokens": ["netflix", "netfl1x"] },
+    { "name": "BT", "keywords": ["bt broadband", "bt account", "openreach", "bt bill"], "domains": ["bt.com", "openreach.co.uk", "openreach.com"], "tokens": ["openreach", "bt-account", "btbroadband"] },
+    { "name": "Post Office", "keywords": ["post office"], "domains": ["postoffice.co.uk"], "tokens": ["postoffice", "post-office"] },
+    { "name": "the police", "keywords": ["police", "action fraud", "report fraud", "scotland yard"], "domains": ["police.uk"], "tokens": ["police", "actionfraud", "reportfraud"] },
+    { "name": "Barclays", "keywords": ["barclays", "barclaycard"], "domains": ["barclays.co.uk", "barclays.com", "barclaycard.co.uk"], "tokens": ["barclays", "barclaycard"] },
+    { "name": "HSBC", "keywords": ["hsbc"], "domains": ["hsbc.co.uk", "hsbc.com"], "tokens": ["hsbc"] },
+    { "name": "Lloyds", "keywords": ["lloyds", "lloyds bank"], "domains": ["lloydsbank.com", "lloydsbank.co.uk", "lloydsbankinggroup.com"], "tokens": ["lloyds"] },
+    { "name": "NatWest", "keywords": ["natwest"], "domains": ["natwest.com"], "tokens": ["natwest", "nat-west"] },
+    { "name": "Santander", "keywords": ["santander"], "domains": ["santander.co.uk", "santander.com"], "tokens": ["santander"] },
+    { "name": "Nationwide", "keywords": ["nationwide"], "domains": ["nationwide.co.uk"], "tokens": ["nationwide"] },
+    { "name": "Halifax", "keywords": ["halifax"], "domains": ["halifax.co.uk"], "tokens": ["halifax"] },
+    { "name": "Monzo", "keywords": ["monzo"], "domains": ["monzo.com"], "tokens": ["monzo"] },
+    { "name": "Starling", "keywords": ["starling bank"], "domains": ["starlingbank.com"], "tokens": ["starling"] },
+    { "name": "TSB", "keywords": ["tsb"], "domains": ["tsb.co.uk"], "tokens": ["tsb"] },
+    { "name": "Revolut", "keywords": ["revolut"], "domains": ["revolut.com"], "tokens": ["revolut"] },
+    { "name": "first direct", "keywords": ["first direct"], "domains": ["firstdirect.com"], "tokens": ["firstdirect"] },
+    { "name": "RBS", "keywords": ["rbs", "royal bank of scotland"], "domains": ["rbs.co.uk", "rbs.com"], "tokens": ["rbs"] },
+    { "name": "Metro Bank", "keywords": ["metro bank"], "domains": ["metrobankonline.co.uk"], "tokens": ["metrobank"] },
+    { "name": "Virgin Money", "keywords": ["virgin money"], "domains": ["virginmoney.com"], "tokens": ["virginmoney"] },
+    { "name": "Co-operative Bank", "keywords": ["co-operative bank", "co-op bank"], "domains": ["co-operativebank.co.uk"], "tokens": ["cooperativebank"] },
+    { "name": "your bank", "keywords": ["your bank", "your bank account", "your bank card"], "domains": ["barclays.co.uk", "hsbc.co.uk", "lloydsbank.com", "natwest.com", "santander.co.uk", "nationwide.co.uk", "halifax.co.uk", "monzo.com", "starlingbank.com", "tsb.co.uk", "revolut.com", "firstdirect.com", "rbs.co.uk", "metrobankonline.co.uk", "virginmoney.com", "co-operativebank.co.uk"], "tokens": ["securebank", "bank-secure", "bank-verify", "verify-bank"] }
+  ],
+
+  "links": {
+    "_about": "Hosts on these lists, or ending in .<domain>, count as official. Anything else that uses a brand's name is a look-alike.",
+    "alwaysOfficial": ["gov.uk", "nhs.uk", "nhs.net", "police.uk", "parliament.uk", "ofcom.org.uk", "fca.org.uk", "citizensadvice.org.uk", "ncsc.gov.uk", "stopscamsuk.org.uk", "takefive-stopfraud.org.uk"],
+    "shorteners": ["bit.ly", "tinyurl.com", "t.co", "goo.gl", "ow.ly", "is.gd", "buff.ly", "rebrand.ly", "cutt.ly", "shorturl.at", "rb.gy", "t.ly", "tiny.cc", "s.id", "v.gd", "lnkd.in", "qrco.de", "bl.ink", "short.io", "linktr.ee"],
+    "riskyTLDs": ["xyz", "top", "online", "site", "club", "icu", "cc", "link", "click", "vip", "buzz", "tk", "ml", "ga", "cf", "gq", "info", "live", "shop", "help", "support", "services", "store", "website", "pw", "sbs", "cfd", "lol", "cyou", "rest", "mobi", "today", "delivery", "work", "fun", "monster", "quest", "bond", "life", "ru", "cn"],
+    "knownTLDs": ["com", "co.uk", "org.uk", "gov.uk", "nhs.uk", "police.uk", "ac.uk", "me.uk", "uk", "org", "net", "eu", "io", "me", "co", "app", "dev", "biz", "us", "de", "fr", "ie", "xyz", "top", "online", "site", "club", "icu", "cc", "link", "click", "vip", "buzz", "tk", "ml", "ga", "cf", "gq", "info", "live", "shop", "help", "support", "services", "store", "website", "pw", "sbs", "cfd", "lol", "cyou", "rest", "mobi", "today", "delivery", "work", "fun", "monster", "quest", "bond", "life", "ru", "cn", "ly", "gl", "gd", "at", "to", "id", "ee", "in", "de"],
+    "weights": { "anyLink": 1, "shortLink": 3, "riskyTLD": 2, "lookalike": 5, "impersonation": 4, "brandOnCall": 2, "officialLink": -2 },
+    "reasons": {
+      "anyLink": "It has a link. Banks, delivery firms and the government rarely text you a link to pay or log in.",
+      "shortLink": "The link is shortened ({{domain}}), so you can't see where it really goes.",
+      "riskyTLD": "The link ends in an unusual web address ({{domain}}) that scammers use a lot.",
+      "lookalike": "The web address {{domain}} looks like {{brand}}, but it isn't {{brand}}'s real website.",
+      "impersonation": "It says it's from {{brand}}, but the link goes to {{domain}}, which is not {{brand}}.",
+      "brandOnCall": "They said they were {{brand}}. Anyone can say that. Hang up and call {{brand}} on a number you trust.",
+      "officialLink": "The link goes to {{brand}}'s real website. That's a good sign, but scammers can copy real links too."
+    }
+  },
+
+  "verdicts": {
+    "scam": {
+      "word": "SCAM",
+      "headline": "This has strong signs of a scam.",
+      "spoken": "Scam. This has strong signs of a scam. Do not reply, do not tap any links, and do not pay.",
+      "advice": "Don't reply, tap links or pay. See what to do now."
+    },
+    "likely": {
+      "word": "LIKELY SCAM",
+      "headline": "This looks like a scam.",
+      "spoken": "Likely scam. This looks like a scam. Do not reply or pay until you have checked.",
+      "advice": "Don't reply or pay. Check by calling them back on the official number."
+    },
+    "unsure": {
+      "word": "NOT SURE",
+      "headline": "Be careful. Some things here are worrying.",
+      "spoken": "Not sure. Be careful. Some things here are worrying.",
+      "advice": "If unsure, call them back on the official number. Don't use a number or link from the message."
+    },
+    "ok": {
+      "word": "LOOKS OK",
+      "headline": "We didn't find the usual scam signs.",
+      "spoken": "Looks OK. We didn't find the usual scam signs. If you are unsure, call them back on the official number.",
+      "advice": "If unsure, call them back on the official number. Find it on their real website, your bill or the back of your card."
+    }
+  },
+
+  "extraReasons": {
+    "scam": [
+      "Real companies don't mind if you hang up and call them back.",
+      "Never share a code that is sent to your phone. Not even with your bank.",
+      "If you have already paid or given details, call your bank on 159 now."
+    ],
+    "likely": [
+      "Real companies don't mind if you hang up and call them back.",
+      "Never share a code that is sent to your phone. Not even with your bank.",
+      "Ask someone you trust before you do anything."
+    ],
+    "unsure": [
+      "Check by calling them back on the official number, not one in the message.",
+      "Never share a code that is sent to your phone. Not even with your bank.",
+      "Ask someone you trust before you do anything."
+    ],
+    "ok": [
+      "We found none of the usual scam signs: no rush, no codes, no odd links.",
+      "Scams change all the time, so no checker can be certain.",
+      "If unsure, call them back on the official number. Don't use a number from the message."
+    ]
+  },
+
+  "contacts": {
+    "spamText": { "name": "7726", "sms": "7726", "note": "Free on all big UK networks. Spells SPAM on the keypad." },
+    "phishingEmail": { "name": "report@phishing.gov.uk", "email": "report@phishing.gov.uk", "note": "The National Cyber Security Centre's scam email service." },
+    "reportFraud": {
+      "name": "Report Fraud",
+      "phone": "0300 123 2040",
+      "url": "https://www.reportfraud.police.uk",
+      "note": "The UK's national fraud reporting service (it used to be called Action Fraud).",
+      "_note": "Action Fraud was replaced by Report Fraud (City of London Police) in late 2025; actionfraud.police.uk redirects. Check the phone number and URL are still current. In Scotland, report to Police Scotland on 101."
+    },
+    "bank159": { "name": "159", "phone": "159", "note": "Connects you safely to your bank's fraud team. Works for most big UK banks." },
+    "police101": { "name": "Police (not an emergency): 101", "phone": "101" },
+    "police999": { "name": "Emergency: 999", "phone": "999" },
+    "citizensAdvice": { "name": "Citizens Advice consumer helpline", "phone": "0808 223 1133", "url": "https://www.citizensadvice.org.uk/consumer/scams/", "_note": "Check the consumer helpline number is still current." }
+  },
+
+  "steps": [
+    {
+      "id": "stop",
+      "title": "Don't reply, tap links or pay",
+      "detail": "Doing nothing is safe. A real company will still be there tomorrow.",
+      "verdicts": ["scam", "likely", "unsure"]
+    },
+    {
+      "id": "hangup",
+      "title": "Hang up",
+      "detail": "You don't have to be polite. Then wait 5 minutes, or use a different phone, before you call anyone. Scammers can keep the line open.",
+      "sources": ["call"],
+      "verdicts": ["scam", "likely", "unsure"]
+    },
+    {
+      "id": "door",
+      "title": "Keep the door shut",
+      "detail": "Ask for ID through the door or window. Don't let them in. Don't pay or agree to any work on the doorstep.",
+      "sources": ["doorstep"]
+    },
+    {
+      "id": "forward7726",
+      "title": "Forward the text to 7726",
+      "detail": "It's free. Your phone company uses it to block the scammer.",
+      "sources": ["sms", "screenshot"],
+      "verdicts": ["scam", "likely", "unsure"],
+      "contacts": ["spamText"]
+    },
+    {
+      "id": "forwardEmail",
+      "title": "Forward the email to report@phishing.gov.uk",
+      "detail": "Then delete it. The government uses these to take scam websites down.",
+      "sources": ["email"],
+      "verdicts": ["scam", "likely", "unsure"],
+      "contacts": ["phishingEmail"]
+    },
+    {
+      "id": "block",
+      "title": "Block the sender",
+      "detail": "In Messages: tap the name or number at the top, tap Info, then Block Caller. Then delete the message.",
+      "sources": ["sms", "screenshot", "call", "email"],
+      "verdicts": ["scam", "likely"]
+    },
+    {
+      "id": "bank",
+      "title": "Paid or shared details? Call 159 now",
+      "detail": "159 puts you through to your bank's fraud team. Or call the number on the back of your card. The sooner you call, the better the chance of stopping it.",
+      "verdicts": ["scam", "likely", "unsure"],
+      "contacts": ["bank159"]
+    },
+    {
+      "id": "report",
+      "title": "Report it",
+      "detail": "Report it to Report Fraud, even if you didn't lose money. It helps stop others being caught.",
+      "verdicts": ["scam", "likely"],
+      "contacts": ["reportFraud"]
+    },
+    {
+      "id": "police",
+      "title": "If they won't go, call the police",
+      "detail": "Call 101 if someone won't leave or keeps coming back. Call 999 if you feel unsafe or a crime is happening now.",
+      "sources": ["doorstep"],
+      "contacts": ["police101", "police999"]
+    },
+    {
+      "id": "callback",
+      "title": "Not sure? Call them back on the official number",
+      "detail": "Find it on the back of your card, on a bill or on their real website. Never use a number or link from the message."
+    },
+    {
+      "id": "tell",
+      "title": "Tell someone you trust",
+      "detail": "Scams happen to clever people every day. Telling family helps protect them too.",
+      "verdicts": ["scam", "likely", "unsure"],
+      "contacts": ["citizensAdvice"]
+    }
+  ],
+
+  "doorstep": {
+    "title": "Someone at the door?",
+    "intro": "Keep the door shut or on the chain. Say this:",
+    "script": [
+      "Please show me your ID card through the window.",
+      "I'm not letting you in today.",
+      "I don't buy anything or agree to any work on the doorstep.",
+      "I'm going to call your company on a number I find myself.",
+      "If you don't leave, I will call the police on 101."
+    ],
+    "tips": [
+      "Real workers from the water, gas or power company carry ID and won't mind waiting while you check.",
+      "Find the company's number on a bill, not on their card.",
+      "Never pay cash at the door or go to the bank with a stranger.",
+      "Call 999 if you feel unsafe."
+    ],
+    "contacts": ["police101", "police999"]
+  },
+
+  "explain": {
+    "instructions": "You help older people in the UK understand possible scam messages. Plain British English a nine-year-old could follow. Short sentences. Explain only the warning signs you are given. Never say a message is safe or genuine, never change the verdict, and never tell the user to tap a link or call a number in the message.",
+    "prompt": "Verdict from the app's rules (do not change it): {{verdict}}\nWarning signs the rules found:\n{{signs}}\n\nThe message or call:\n{{text}}"
+  },
+
+  "paywall": {
+    "headline": "Protect the whole family",
+    "bullets": [
+      "Unlimited scam checks",
+      "Shared with up to 5 family members through Family Sharing",
+      "Works from the Share button in Messages, Mail and Photos",
+      "Everything stays on the phone. Nothing is sent anywhere"
+    ]
+  }
+}

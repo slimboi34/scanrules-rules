@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "_note": "Guidance only. Every figure here is a rule of thumb for tenants, not legal advice. Wales, Scotland and Northern Ireland have their own laws and are marked with differs: true.",
+  "roomTemplates": [
+    {
+      "id": "studio",
+      "label": "Studio",
+      "detail": "One main room with a kitchen area",
+      "rooms": ["Entrance and hallway", "Main room", "Kitchen area", "Bathroom"]
+    },
+    {
+      "id": "onebed",
+      "label": "1-bed flat or house",
+      "detail": "Separate bedroom, living room and kitchen",
+      "rooms": ["Entrance and hallway", "Living room", "Kitchen", "Bedroom", "Bathroom"]
+    },
+    {
+      "id": "shared",
+      "label": "Shared house",
+      "detail": "Your room plus the shared spaces",
+      "rooms": ["Your bedroom", "Shared kitchen", "Shared bathroom", "Shared living room", "Hallway and stairs", "Outside and bins"]
+    }
+  ],
+  "prompts": [
+    { "id": "door", "label": "Door", "hint": "Stand back and get the whole door and frame. Then the other side. Check the handle and lock.", "isDamage": false },
+    { "id": "walls", "label": "Walls", "hint": "One photo per wall, corner to corner. Get marks, holes and paint patches in shot.", "isDamage": false },
+    { "id": "floor", "label": "Floor", "hint": "Carpet or floor from the doorway, then any stains or wear up close.", "isDamage": false },
+    { "id": "ceiling", "label": "Ceiling", "hint": "Point up. Look for damp patches, cracks and the light fitting.", "isDamage": false },
+    { "id": "window", "label": "Windows", "hint": "Glass, frames, sills, locks, blinds or curtains. Check for mould in the corners.", "isDamage": false },
+    { "id": "fixtures", "label": "Fixtures and appliances", "hint": "Sockets, switches, radiators, the oven, fridge, taps, furniture. Open the oven and fridge.", "isDamage": false },
+    { "id": "damage", "label": "Anything damaged?", "hint": "Close-ups of every mark, chip, stain, burn or crack. Put a coin or key next to it for scale. Add a note saying what it is.", "isDamage": true }
+  ],
+  "meters": [
+    { "id": "electricity", "label": "Electricity", "hint": "Photograph the whole display so the numbers and the serial number are clear.", "unit": "kWh" },
+    { "id": "gas", "label": "Gas", "hint": "Get the black or white numbers. Ignore any red numbers after the decimal point.", "unit": "m³" },
+    { "id": "water", "label": "Water", "hint": "Water meters are often outside under a small cover, or under the kitchen sink.", "unit": "m³" }
+  ],
+  "meterOCR": {
+    "minDigits": 4,
+    "maxDigits": 7,
+    "_note": "Reading guesses must have 4 to 7 whole digits. Serial numbers are usually longer, and 4-digit numbers that look like years are ignored."
+  },
+  "schemes": {
+    "dps": {
+      "name": "Deposit Protection Service (DPS)",
+      "url": "https://www.depositprotection.com",
+      "disputeURL": "https://www.depositprotection.com",
+      "disputeMonths": 3,
+      "_note": "Dispute window: check on the DPS website; 3 months from the end of the tenancy is the usual limit.",
+      "plain": "The DPS is a government-approved scheme for England and Wales. It can hold the money itself (custodial) or insure it. Its dispute service is free.",
+      "steps": [
+        "Ask your landlord in writing for your deposit back. Say how much you think you should get.",
+        "If you agree on part of it, ask for that part now. Once you agree, it should be paid within 10 days.",
+        "If you still disagree, raise a dispute on the DPS website. Do it within 3 months of the tenancy ending.",
+        "Upload your evidence pack: the move-in record, the email you sent on move-in day, your move-out photos and any messages.",
+        "An adjudicator decides using the written evidence from both of you. There is no hearing.",
+        "The dispute service needs you both to take part. If it can't be used, the other route is the small claims court."
+      ]
+    },
+    "tds": {
+      "name": "Tenancy Deposit Scheme (TDS)",
+      "url": "https://www.tenancydepositscheme.com",
+      "disputeURL": "https://www.tenancydepositscheme.com",
+      "disputeMonths": 3,
+      "_note": "Dispute window: check on the TDS website; 3 months from the end of the tenancy is the usual limit.",
+      "plain": "TDS is a government-approved scheme for England and Wales, with custodial and insured options. Its dispute service is free.",
+      "steps": [
+        "Ask your landlord in writing for your deposit back. Say how much you think you should get.",
+        "If you agree on part of it, ask for that part now. Once you agree, it should be paid within 10 days.",
+        "If you still disagree, raise a dispute with TDS online. Do it within 3 months of the tenancy ending.",
+        "Send your evidence pack: the move-in record, the email you sent on move-in day, your move-out photos and any messages.",
+        "An adjudicator looks at the evidence from both sides and decides. There is no hearing.",
+        "If the dispute service can't be used, the other route is the small claims court."
+      ]
+    },
+    "mydeposits": {
+      "name": "mydeposits",
+      "url": "https://www.mydeposits.co.uk",
+      "disputeURL": "https://www.mydeposits.co.uk",
+      "disputeMonths": 3,
+      "_note": "Dispute window: check on the mydeposits website; 3 months from the end of the tenancy is the usual limit.",
+      "plain": "mydeposits is a government-approved scheme for England and Wales, with custodial and insured options. Its dispute service is free.",
+      "steps": [
+        "Ask your landlord in writing for your deposit back. Say how much you think you should get.",
+        "If you agree on part of it, ask for that part now. Once you agree, it should be paid within 10 days.",
+        "If you still disagree, raise a dispute with mydeposits online. Do it within 3 months of the tenancy ending.",
+        "Upload your evidence pack: the move-in record, the email you sent on move-in day, your move-out photos and any messages.",
+        "An adjudicator decides using the written evidence from both of you.",
+        "If the dispute service can't be used, the other route is the small claims court."
+      ]
+    },
+    "unknown": {
+      "name": "Not sure yet",
+      "url": "https://www.gov.uk/tenancy-deposit-protection",
+      "disputeURL": "https://www.gov.uk/tenancy-deposit-protection",
+      "disputeMonths": 3,
+      "plain": "In England and Wales your deposit should be in one of three schemes: DPS, TDS or mydeposits. Your landlord should have told you which.",
+      "steps": [
+        "Look for the 'prescribed information' your landlord sent. It names the scheme.",
+        "If you can't find it, ask your landlord or agent in writing which scheme holds your deposit.",
+        "You can also search each scheme's website with your details: DPS, TDS and mydeposits.",
+        "If it isn't in any of them, it may not be protected. Get free advice from Shelter or Citizens Advice."
+      ]
+    }
+  },
+  "nations": {
+    "england": {
+      "label": "England",
+      "differs": false,
+      "law": "Housing Act 2004 and Tenant Fees Act 2019",
+      "protectDays": 30,
+      "protectWorkingDays": false,
+      "penalty": "If it isn't protected in time, a court can order the landlord to pay you 1 to 3 times the deposit.",
+      "returnDays": 10,
+      "returnPlain": "Once you and your landlord agree how much you get back, it should be returned within 10 days.",
+      "cap": {
+        "kind": "weeks",
+        "weeksUnder": 5,
+        "weeksOver": 6,
+        "thresholdAnnualPence": 5000000,
+        "plain": "Under the Tenant Fees Act 2019 a deposit can be no more than 5 weeks' rent if the yearly rent is under £50,000, or 6 weeks' rent if it is £50,000 or more."
+      },
+      "schemes": ["dps", "tds", "mydeposits"],
+      "checkURL": "https://www.gov.uk/tenancy-deposit-protection"
+    },
+    "wales": {
+      "label": "Wales",
+      "differs": true,
+      "differsNote": "Wales has its own law: the Renting Homes (Wales) Act 2016 and the Renting Homes (Fees etc.) (Wales) Act 2019. Deposits still go in DPS, TDS or mydeposits within 30 days, but there is no legal cap on the security deposit.",
+      "_note": "Wales: no statutory cap on security deposits and the 10-day return comes from scheme rules. Needs checking against gov.wales.",
+      "law": "Renting Homes (Wales) Act 2016",
+      "protectDays": 30,
+      "protectWorkingDays": false,
+      "penalty": "If it isn't protected in time, a court can order the landlord to pay you up to 3 times the deposit.",
+      "returnDays": 10,
+      "returnPlain": "Once you agree how much you get back, schemes expect it to be returned within 10 days.",
+      "cap": {
+        "kind": "none",
+        "plain": "Wales doesn't set a legal cap on the security deposit. A holding deposit can be no more than 1 week's rent."
+      },
+      "schemes": ["dps", "tds", "mydeposits"],
+      "checkURL": "https://www.gov.wales/renting-homes"
+    },
+    "scotland": {
+      "label": "Scotland",
+      "differs": true,
+      "differsNote": "Scotland has its own law and its own schemes: SafeDeposits Scotland, Letting Protection Service Scotland and MyDeposits Scotland. Deposits must be protected within 30 working days of the tenancy starting, and can be no more than 2 months' rent.",
+      "_note": "Scotland: 30 working days, 2-month cap, up to 3x penalty. Dispute windows differ by scheme and need checking.",
+      "law": "Tenancy Deposit Schemes (Scotland) Regulations 2011",
+      "protectDays": 30,
+      "protectWorkingDays": true,
+      "penalty": "If it isn't protected in time, a tribunal can order the landlord to pay you up to 3 times the deposit.",
+      "returnDays": 10,
+      "returnPlain": "Ask your scheme for the deposit back at the end of the tenancy. Check your scheme's own timescales.",
+      "cap": {
+        "kind": "months",
+        "months": 2,
+        "plain": "In Scotland a deposit can be no more than 2 months' rent."
+      },
+      "schemes": [],
+      "schemesNote": "Scottish schemes: SafeDeposits Scotland, Letting Protection Service Scotland, MyDeposits Scotland.",
+      "checkURL": "https://www.mygov.scot/tenancy-deposits"
+    },
+    "northernIreland": {
+      "label": "Northern Ireland",
+      "differs": true,
+      "differsNote": "Northern Ireland has its own law and schemes: TDS Northern Ireland and mydeposits Northern Ireland. Deposits must be protected within 28 days, and for tenancies from April 2023 can be no more than 1 month's rent.",
+      "_note": "NI: 28 days, 1-month cap for tenancies from 1 April 2023 (Private Tenancies Act (NI) 2022). Needs checking against nidirect.",
+      "law": "Tenancy Deposit Schemes Regulations (Northern Ireland) 2012",
+      "protectDays": 28,
+      "protectWorkingDays": false,
+      "penalty": "If it isn't protected in time, the council can fine the landlord up to 3 times the deposit.",
+      "returnDays": 10,
+      "returnPlain": "Ask your scheme for the deposit back at the end of the tenancy. Check your scheme's own timescales.",
+      "cap": {
+        "kind": "months",
+        "months": 1,
+        "plain": "For tenancies that began from April 2023, a deposit can be no more than 1 month's rent."
+      },
+      "schemes": [],
+      "schemesNote": "Northern Ireland schemes: TDS Northern Ireland, mydeposits Northern Ireland.",
+      "checkURL": "https://www.nidirect.gov.uk/articles/tenancy-deposit-scheme"
+    }
+  },
+  "legalPoints": [
+    { "id": "protect", "nations": ["england", "wales"], "title": "Protected within 30 days", "detail": "Your landlord must put your deposit in a government-approved scheme within 30 days of getting it." },
+    { "id": "prescribed", "nations": ["england", "wales"], "title": "Prescribed information", "detail": "In the same 30 days they must tell you which scheme it is in, how to get it back and what to do if you disagree. This is called the prescribed information." },
+    { "id": "penalty", "nations": ["england", "wales"], "title": "If they didn't", "detail": "If the deposit wasn't protected, or you weren't given the information, a court can order the landlord to pay you 1 to 3 times the deposit. It can also limit how they end the tenancy." },
+    { "id": "return10", "nations": ["england", "wales"], "title": "Back within 10 days of agreeing", "detail": "Once you and your landlord agree how much you get back, it should be returned within 10 days." },
+    { "id": "cap", "nations": ["england"], "title": "Deposit cap", "detail": "A deposit can be no more than 5 weeks' rent if the yearly rent is under £50,000, or 6 weeks' rent if it is £50,000 or more." },
+    { "id": "feesact", "nations": ["england"], "title": "Tenant Fees Act 2019", "detail": "Most other fees are banned in England. A holding deposit can be no more than 1 week's rent." },
+    { "id": "wear", "nations": ["england", "wales", "scotland", "northernIreland"], "title": "Fair wear and tear", "detail": "Landlords shouldn't charge for normal wear from living there. Schemes look at how old things were, how long you lived there and what the check-in record shows." },
+    { "id": "proof", "nations": ["england", "wales", "scotland", "northernIreland"], "title": "Who has to show it", "detail": "In a scheme dispute it is usually up to the landlord to show why money should be kept. Dated photos from both ends of the tenancy help the adjudicator see what changed." },
+    { "id": "adr", "nations": ["england", "wales"], "title": "The free dispute service", "detail": "Each scheme has a free dispute service. You both usually need to take part. If not, the other route is the small claims court." },
+    { "id": "scotland", "nations": ["scotland"], "title": "Scotland is different", "detail": "Deposits must be protected within 30 working days with SafeDeposits Scotland, Letting Protection Service Scotland or MyDeposits Scotland, and can be no more than 2 months' rent." },
+    { "id": "ni", "nations": ["northernIreland"], "title": "Northern Ireland is different", "detail": "Deposits must be protected within 28 days with TDS Northern Ireland or mydeposits Northern Ireland. For tenancies from April 2023 they can be no more than 1 month's rent." },
+    { "id": "wales", "nations": ["wales"], "title": "Wales is different", "detail": "Wales follows the Renting Homes (Wales) Act 2016. The English deposit cap doesn't apply, but a holding deposit can be no more than 1 week's rent." }
+  ],
+  "cleaningChecklist": [
+    { "id": "oven", "area": "Kitchen", "text": "Oven, hob and grill degreased, racks and trays too" },
+    { "id": "fridge", "area": "Kitchen", "text": "Fridge and freezer emptied, defrosted and wiped" },
+    { "id": "cupboards", "area": "Kitchen", "text": "Cupboards and drawers emptied and wiped out" },
+    { "id": "sink", "area": "Kitchen", "text": "Sink, taps and worktops clean, no limescale" },
+    { "id": "extractor", "area": "Kitchen", "text": "Extractor fan filter cleaned" },
+    { "id": "limescale", "area": "Bathroom", "text": "Limescale off taps, shower head and screen" },
+    { "id": "toilet", "area": "Bathroom", "text": "Toilet cleaned, inside and out" },
+    { "id": "mould", "area": "Bathroom", "text": "Mould wiped off sealant and tiles" },
+    { "id": "drains", "area": "Bathroom", "text": "Hair cleared from plugholes" },
+    { "id": "floors", "area": "Every room", "text": "Floors hoovered and mopped, under the bed too" },
+    { "id": "skirting", "area": "Every room", "text": "Skirting boards, doors and light switches wiped" },
+    { "id": "walls", "area": "Every room", "text": "Blu-Tack and hooks removed gently, marks wiped" },
+    { "id": "windows", "area": "Every room", "text": "Windows, sills and frames wiped" },
+    { "id": "belongings", "area": "Every room", "text": "All your things gone, nothing left in cupboards" },
+    { "id": "rubbish", "area": "Every room", "text": "Rubbish out and bins emptied" },
+    { "id": "bulbs", "area": "Every room", "text": "Any blown bulbs replaced" },
+    { "id": "outside", "area": "Outside", "text": "Garden and bin area as they were at check-in" },
+    { "id": "keys", "area": "Keys", "text": "All keys together and ready to hand back" }
+  ],
+  "templates": {
+    "inventory_subject": "Move-in photos for {{address}}",
+    "inventory_sent": "Dear {{landlord}},\n\nI moved in to {{address}} on {{move_in}}. Attached is my move-in record: {{photo_count}} dated photos of {{room_count}} rooms.\n\n{{meter_lines}}\n\nEach photo shows the date, time and place it was taken, and a SHA-256 fingerprint of the file. The fingerprint shows the photos have not been changed since.\n\nPlease keep this with the check-in inventory. If you disagree with anything in it, please tell me in writing within 7 days.\n\nCould you also confirm which scheme protects my deposit of {{deposit}}, and send the prescribed information if you haven't already?\n\nThank you,\n{{name}}\n{{today}}",
+    "moveout_subject": "Move-out photos for {{address}}",
+    "moveout_sent": "Dear {{landlord}},\n\nI moved out of {{address}} on {{move_out}}. Attached are my move-out photos, side by side with the move-in photos I sent you on {{sent_date}}. Each photo is dated and fingerprinted.\n\n{{meter_lines}}\n\nPlease return my deposit of {{deposit}}. If you plan to keep any of it, please tell me in writing how much and why.\n\nThank you,\n{{name}}\n{{today}}",
+    "dispute_subject": "Deposit for {{address}}",
+    "dispute_response": "Dear {{landlord}},\n\nDeposit for {{address}}\nTenancy: {{move_in}} to {{move_out}}\nDeposit: {{deposit}}, protected with {{scheme}}\n\nYou have proposed keeping {{claim}} for: {{reasons}}\n\nI don't agree. On {{sent_date}} I sent you dated, fingerprinted photos of the property on move-in day. My move-out photos, taken on {{move_out}}, show the same rooms. Side by side they show {{comparison}}.\n\nLandlords shouldn't charge for fair wear and tear. Any charge should match the actual loss, and take into account the age of the item and how long I lived there.\n\nPlease return my deposit in full. If we can't agree, I will ask {{scheme}} to use its free dispute service, and send them my evidence pack.\n\nYours sincerely,\n{{name}}\n{{today}}"
+  },
+  "freeHelp": {
+    "title": "Free advice: Shelter",
+    "url": "https://england.shelter.org.uk/housing_advice/tenancy_deposits"
+  }
+}

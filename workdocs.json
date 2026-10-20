@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "_about": "Site Docs rules. Every document type, lead time, renewal link and trade pack lives here, not in Swift. Guidance only: always check the official site.",
+  "reminderDays": [60, 30, 7],
+  "reminderHour": 9,
+  "showModeSeconds": 60,
+  "rag": {
+    "redDays": 14,
+    "amberDays": 60,
+    "_note": "Red: expired or 14 days or less left. Amber: inside the renewal lead time or 60 days or less. Green: otherwise."
+  },
+  "expiryLabels": ["expiry date", "date of expiry", "expiry", "expires", "expires on", "exp", "valid until", "valid to", "valid thru", "expiration", "renewal date", "4b"],
+  "issueLabels": ["date of issue", "issue date", "issued", "issued on", "valid from", "date of test", "start date", "effective date", "date of commencement", "4a"],
+  "genericNumberPatterns": [
+    "\\b(?:no\\.|number|ref(?:erence)?|cert(?:ificate)?\\s*no\\.?)\\s*[:#]?\\s*([A-Z0-9][A-Z0-9\\-/]{4,19})"
+  ],
+  "freeHelp": {
+    "title": "Free advice: Citizens Advice",
+    "url": "https://www.citizensadvice.org.uk/work/"
+  },
+  "types": [
+    {
+      "id": "cscs",
+      "label": "CSCS card",
+      "short": "CSCS",
+      "issuer": "CSCS",
+      "numberLabel": "Registration number",
+      "validityMonths": 60,
+      "_validityNote": "Most CSCS cards last 5 years. Some (such as trainee or provisional cards) are shorter. Check yours.",
+      "leadDays": 90,
+      "_leadNote": "Renewing usually needs a Health, Safety and Environment test passed in the last 2 years, and tests can be booked up weeks ahead. Check the CSCS site for the earliest you can renew.",
+      "renewalURL": "https://www.citb.co.uk/courses-and-qualifications/hs-e-test-and-cards/",
+      "renewalSite": "CITB",
+      "renewSteps": [
+        "Check which card you need. It may have changed since last time.",
+        "Book and pass the Health, Safety and Environment test if yours is more than 2 years old.",
+        "Apply to renew on the CSCS website or by phone.",
+        "Keep your old card until the new one arrives."
+      ],
+      "note": "Many sites will not let you through the gate without an in-date card.",
+      "keywords": ["cscs", "construction skills certification", "construction skills certification scheme", "skilled worker", "labourer", "citb"],
+      "numberPatterns": ["(?:reg(?:istration)?|card)\\s*(?:no\\.?|number)?\\s*[:#]?\\s*(\\d{6,12})"]
+    },
+    {
+      "id": "cbt",
+      "label": "CBT certificate",
+      "short": "CBT",
+      "issuer": "Approved training body",
+      "numberLabel": "Certificate number (DL196)",
+      "validityMonths": 24,
+      "_validityNote": "A CBT certificate lasts 2 years. Pass your full test in that time, or take CBT again.",
+      "leadDays": 42,
+      "_leadNote": "Training slots can book up weeks ahead.",
+      "renewalURL": "https://www.gov.uk/motorcycle-cbt",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Book a new CBT course with an approved training school, or book your full test.",
+        "Take your driving licence to the course.",
+        "Keep the new DL196 certificate safe. You may be asked for it."
+      ],
+      "note": "Riding on an expired CBT can mean you are not insured.",
+      "keywords": ["compulsory basic training", "cbt", "dl196", "approved training body"],
+      "numberPatterns": ["(?:certificate|serial)\\s*(?:no\\.?|number)?\\s*[:#]?\\s*([A-Z]?\\d{6,10})"]
+    },
+    {
+      "id": "mot",
+      "label": "MOT certificate",
+      "short": "MOT",
+      "issuer": "MOT test centre",
+      "numberLabel": "MOT test number",
+      "validityMonths": 12,
+      "leadDays": 30,
+      "_leadNote": "You can get an MOT up to a month (minus a day) before it runs out and keep the same renewal date.",
+      "renewalURL": "https://www.gov.uk/getting-an-mot",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Book an MOT at a local test centre.",
+        "Do it up to a month (minus a day) early to keep the same renewal date.",
+        "Check the result on GOV.UK afterwards."
+      ],
+      "note": "Driving without a valid MOT can lead to a fine and can affect your insurance.",
+      "keywords": ["mot", "mot test certificate", "vt20", "test certificate", "odometer", "vehicle testing station"],
+      "numberPatterns": ["mot\\s*test\\s*number\\s*[:#]?\\s*(\\d{4}\\s?\\d{4}\\s?\\d{4})", "test\\s*(?:no\\.?|number)\\s*[:#]?\\s*(\\d{4}\\s?\\d{4}\\s?\\d{4})"]
+    },
+    {
+      "id": "insurance",
+      "label": "Vehicle insurance",
+      "short": "Insurance",
+      "issuer": "",
+      "numberLabel": "Policy number",
+      "validityMonths": 12,
+      "leadDays": 28,
+      "_leadNote": "Quotes are often cheaper about 3 to 4 weeks before renewal.",
+      "renewalURL": "https://www.gov.uk/vehicle-insurance",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Get quotes about 3 to 4 weeks before it ends.",
+        "Check the cover fits your work, such as hire and reward or business use.",
+        "Save the new certificate in the app."
+      ],
+      "note": "Using the vehicle for work often needs business, courier or hire and reward cover.",
+      "keywords": ["certificate of motor insurance", "insurance", "insurer", "policy number", "policyholder", "policy holder", "hire and reward"],
+      "numberPatterns": ["policy\\s*(?:no\\.?|number)\\s*[:#]?\\s*([A-Z0-9][A-Z0-9\\-/]{4,19})"]
+    },
+    {
+      "id": "phv_badge",
+      "label": "PHV driver licence",
+      "short": "PHV badge",
+      "issuer": "Licensing authority",
+      "numberLabel": "Licence number",
+      "validityMonths": 36,
+      "_validityNote": "TfL private hire driver licences usually last 3 years. Other councils may differ.",
+      "leadDays": 90,
+      "_leadNote": "Apply early. Checks such as DBS and medicals take time. Check your licensing authority for its own advice.",
+      "renewalURL": "https://tfl.gov.uk/info-for/taxis-and-private-hire/licensing/private-hire-driver-licence",
+      "renewalSite": "TfL",
+      "renewSteps": [
+        "Start your renewal online with your licensing authority (TfL in London).",
+        "Get a tax check code from HMRC. You will need it to renew.",
+        "Book any medical, DBS or other checks they ask for.",
+        "Keep proof that you applied in case your licence runs out while you wait."
+      ],
+      "note": "Outside London, your council licenses you. Change the renewal link to your council's page.",
+      "keywords": ["private hire driver", "phv driver", "private hire driver licence", "private hire driver's licence", "badge", "hackney"],
+      "numberPatterns": ["(?:licence|badge)\\s*(?:no\\.?|number)\\s*[:#]?\\s*([A-Z0-9]{4,12})"]
+    },
+    {
+      "id": "phv_vehicle",
+      "label": "PHV vehicle licence",
+      "short": "PHV vehicle",
+      "issuer": "Licensing authority",
+      "numberLabel": "Vehicle licence number",
+      "validityMonths": 12,
+      "_validityNote": "TfL private hire vehicle licences usually last 1 year. Other councils may differ.",
+      "leadDays": 60,
+      "_leadNote": "Conservative value: inspections need booking. Needs checking against your authority's advice.",
+      "renewalURL": "https://tfl.gov.uk/info-for/taxis-and-private-hire/licensing/private-hire-vehicle-licence",
+      "renewalSite": "TfL",
+      "renewSteps": [
+        "Apply to renew the vehicle licence with your licensing authority.",
+        "Book the vehicle inspection.",
+        "Check your MOT and insurance are in date first."
+      ],
+      "note": "Outside London, your council licenses the vehicle. Change the renewal link to your council's page.",
+      "keywords": ["private hire vehicle", "phv vehicle", "vehicle licence", "private hire vehicle licence", "disc"],
+      "numberPatterns": ["(?:licence|plate|disc)\\s*(?:no\\.?|number)\\s*[:#]?\\s*([A-Z0-9]{4,12})"]
+    },
+    {
+      "id": "dbs",
+      "label": "DBS certificate",
+      "short": "DBS",
+      "issuer": "Disclosure and Barring Service",
+      "numberLabel": "Certificate number",
+      "validityMonths": 36,
+      "_validityNote": "DBS certificates have no official expiry date. Many employers ask for one under 3 years old. Change the date to what your employer wants.",
+      "leadDays": 42,
+      "_leadNote": "Conservative value: checks can take several weeks.",
+      "renewalURL": "https://www.gov.uk/dbs-update-service",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Ask your employer or agency which check they need.",
+        "If you use the DBS Update Service, renew your subscription each year.",
+        "If not, your employer or agency starts a new check for you."
+      ],
+      "note": "The Update Service lets employers check your certificate is still current, with your permission.",
+      "keywords": ["disclosure and barring", "dbs", "enhanced certificate", "basic certificate", "standard certificate", "barred list"],
+      "numberPatterns": ["certificate\\s*(?:no\\.?|number)\\s*[:#]?\\s*(\\d{12})", "\\b(\\d{12})\\b"]
+    },
+    {
+      "id": "sia",
+      "label": "SIA licence",
+      "short": "SIA",
+      "issuer": "Security Industry Authority",
+      "numberLabel": "Licence number",
+      "validityMonths": 36,
+      "_validityNote": "Most front-line SIA licences last 3 years.",
+      "leadDays": 120,
+      "_leadNote": "The SIA says you can apply to renew 4 months before your licence expires.",
+      "renewalURL": "https://www.gov.uk/guidance/renew-your-sia-licence",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Sign in to your SIA online account.",
+        "Apply to renew. You can do this 4 months before it expires.",
+        "Check if you need any top-up training first.",
+        "Wear your current licence until the new one arrives, if it is still in date."
+      ],
+      "note": "Working without a valid licence is an offence.",
+      "keywords": ["security industry authority", "sia", "door supervisor", "security guard", "cctv", "close protection", "public space surveillance"],
+      "numberPatterns": ["(?:licence)\\s*(?:no\\.?|number)?\\s*[:#]?\\s*(\\d{4}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4})", "\\b(\\d{4}\\s\\d{4}\\s\\d{4}\\s\\d{4})\\b", "\\b(\\d{16})\\b"]
+    },
+    {
+      "id": "first_aid",
+      "label": "First aid certificate",
+      "short": "First aid",
+      "issuer": "",
+      "numberLabel": "Certificate number",
+      "validityMonths": 36,
+      "_validityNote": "First Aid at Work and Emergency First Aid at Work certificates usually last 3 years.",
+      "leadDays": 60,
+      "_leadNote": "Book the requalification course before it runs out.",
+      "renewalURL": "https://www.hse.gov.uk/firstaid/",
+      "renewalSite": "HSE",
+      "renewSteps": [
+        "Book a requalification course before it runs out.",
+        "Check with your employer which course they need (FAW or EFAW).",
+        "Scan the new certificate when you get it."
+      ],
+      "note": "HSE also recommends a yearly refresher.",
+      "keywords": ["first aid at work", "first aid", "emergency first aid", "efaw", "faw", "first aider"],
+      "numberPatterns": ["cert(?:ificate)?\\s*(?:no\\.?|number)\\s*[:#]?\\s*([A-Z0-9][A-Z0-9\\-/]{4,19})"]
+    },
+    {
+      "id": "driving_licence",
+      "label": "Driving licence",
+      "short": "Licence",
+      "issuer": "DVLA",
+      "numberLabel": "Licence number",
+      "validityMonths": 120,
+      "_validityNote": "The photocard needs renewing every 10 years. The date is at 4b on the card.",
+      "leadDays": 60,
+      "_leadNote": "Conservative value: renewing online is usually quick, but post can take weeks.",
+      "renewalURL": "https://www.gov.uk/renew-driving-licence",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Renew online on GOV.UK. You need a passport or a photo.",
+        "Pay the fee shown on GOV.UK.",
+        "Send back your old photocard when asked."
+      ],
+      "note": "You can be fined if you do not renew your photocard.",
+      "keywords": ["driving licence", "dvla", "4b", "4a", "provisional licence"],
+      "numberPatterns": ["\\b([A-Z9]{5}\\d{6}[A-Z9]{2}\\d[A-Z]{2})\\b"]
+    },
+    {
+      "id": "right_to_work_share_code",
+      "label": "Right to work share code",
+      "short": "Share code",
+      "issuer": "Home Office",
+      "numberLabel": "Share code",
+      "validityMonths": 3,
+      "_validityNote": "A share code for proving your right to work lasts 90 days. Get a new one for each new job.",
+      "leadDays": 7,
+      "renewalURL": "https://www.gov.uk/prove-right-to-work",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Sign in to view and prove your immigration status on GOV.UK.",
+        "Choose to prove your right to work and get a new share code.",
+        "Send the code and your date of birth to your new employer or agency."
+      ],
+      "note": "Your eVisa itself may have a different end date. Check it on GOV.UK.",
+      "keywords": ["share code", "right to work", "home office", "prove your right to work", "immigration status", "evisa"],
+      "numberPatterns": ["share\\s*code\\s*[:#]?\\s*([A-Z0-9]{3}\\s?[A-Z0-9]{3}\\s?[A-Z0-9]{3})", "\\b([A-Z0-9]{3}\\s[A-Z0-9]{3}\\s[A-Z0-9]{3})\\b"]
+    },
+    {
+      "id": "custom",
+      "label": "Other document",
+      "short": "Other",
+      "issuer": "",
+      "numberLabel": "Number",
+      "leadDays": 30,
+      "renewalURL": "https://www.gov.uk/",
+      "renewalSite": "GOV.UK",
+      "renewSteps": [
+        "Check who issued it and how to renew.",
+        "Add their renewal page as the link for this document."
+      ],
+      "keywords": [],
+      "numberPatterns": []
+    }
+  ],
+  "packs": [
+    {"id": "construction", "label": "Construction", "symbol": "hammer.fill", "types": ["cscs", "first_aid", "driving_licence", "right_to_work_share_code"]},
+    {"id": "delivery", "label": "Delivery", "symbol": "shippingbox.fill", "types": ["driving_licence", "cbt", "mot", "insurance", "right_to_work_share_code"]},
+    {"id": "private_hire", "label": "Private Hire", "symbol": "car.fill", "types": ["phv_badge", "phv_vehicle", "driving_licence", "mot", "insurance", "dbs"]},
+    {"id": "care", "label": "Care", "symbol": "heart.fill", "types": ["dbs", "first_aid", "driving_licence", "right_to_work_share_code"]},
+    {"id": "security", "label": "Security", "symbol": "shield.fill", "types": ["sia", "first_aid", "dbs", "right_to_work_share_code"]}
+  ]
+}

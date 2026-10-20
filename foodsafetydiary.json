@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "England",
+  "_note": "Figures follow the FSA's Safer Food, Better Business (SFBB) pack and the Food Safety and Hygiene (England) Regulations 2013. Wales and Northern Ireland use the same chill and hot-holding limits. Scotland differs in places (for example reheating to 82 °C) and uses the CookSafe pack. Checklist wording is our plain-English version of the SFBB pages, not the FSA's own text.",
+  "unitTypes": {
+    "fridge": {
+      "label": "Fridge",
+      "plain": "Keep chilled food at 8 °C or below. That is the law in England. Aim for 5 °C or below.",
+      "minC": 0,
+      "maxC": 8,
+      "targetC": 5,
+      "targetText": "Above the 5 °C target. Still legal, but turn the fridge down a little.",
+      "dailyByDefault": true,
+      "suggestions": [
+        "Closed the door and checked the seal",
+        "Turned the thermostat down",
+        "Moved the food to another fridge",
+        "Checked again 30 minutes later",
+        "Threw away high-risk food that was above 8 °C for over 4 hours",
+        "Called an engineer"
+      ],
+      "_note": "Chilled food may be above 8 °C once, for up to 4 hours (for example while serving or moving it). Over that, throw high-risk food away."
+    },
+    "freezer": {
+      "label": "Freezer",
+      "plain": "Keep frozen food at −18 °C or colder.",
+      "minC": -30,
+      "maxC": -18,
+      "targetC": null,
+      "targetText": null,
+      "dailyByDefault": true,
+      "suggestions": [
+        "Closed the lid or door properly",
+        "Moved the food to another freezer",
+        "Food still frozen hard, so kept it",
+        "Food had thawed: moved to the fridge and used within 24 hours",
+        "Threw the thawed food away",
+        "Called an engineer"
+      ],
+      "_note": "−18 °C is the standard for frozen food storage and what most SFBB packs use. A short rise while defrosting or loading is normal; check again."
+    },
+    "hot_hold": {
+      "label": "Hot holding",
+      "plain": "Keep hot food at 63 °C or hotter. That is the law in England.",
+      "minC": 63,
+      "maxC": 100,
+      "targetC": null,
+      "targetText": null,
+      "dailyByDefault": true,
+      "suggestions": [
+        "Reheated the food until steaming hot (75 °C core)",
+        "Turned the unit up",
+        "Threw away food that was below 63 °C for over 2 hours",
+        "Moved the food to another unit",
+        "Called an engineer"
+      ],
+      "_note": "Hot food may be below 63 °C once, for up to 2 hours. After that, reheat it once or throw it away."
+    },
+    "probe": {
+      "label": "Cooking probe",
+      "plain": "Cook food until the centre reaches 75 °C. Probe the thickest part.",
+      "minC": 75,
+      "maxC": 100,
+      "targetC": null,
+      "targetText": null,
+      "dailyByDefault": false,
+      "suggestions": [
+        "Cooked it for longer and probed it again",
+        "Cut it into smaller pieces and cooked again",
+        "Checked the probe in iced and boiling water",
+        "Threw the food away"
+      ],
+      "_note": "SFBB uses 75 °C. Other safe time and temperature mixes: 70 °C for 2 minutes, 80 °C for 6 seconds. Some foods, such as rare beef, have their own safe method."
+    }
+  },
+  "ocr": {
+    "minC": -30,
+    "maxC": 100
+  },
+  "daily": {
+    "minReadingsPerUnit": 1,
+    "requiredChecks": ["opening", "closing"]
+  },
+  "checklists": {
+    "opening": {
+      "title": "Opening checks",
+      "plain": "Do these before you start work.",
+      "everyDays": 1,
+      "items": [
+        { "id": "chill_working", "text": "Fridges, chilled displays and freezers are working" },
+        { "id": "equipment_working", "text": "Other equipment, such as the oven, is working" },
+        { "id": "staff_fit", "text": "Staff are fit for work and in clean work clothes" },
+        { "id": "surfaces_clean", "text": "Prep areas are clean and disinfected: worktops, boards, equipment" },
+        { "id": "handwash", "text": "There is soap, paper towels and sanitiser" },
+        { "id": "probe_ok", "text": "The probe thermometer works and is clean" },
+        { "id": "no_pests", "text": "No signs of pests" }
+      ]
+    },
+    "closing": {
+      "title": "Closing checks",
+      "plain": "Do these before you lock up.",
+      "everyDays": 1,
+      "items": [
+        { "id": "useby", "text": "Food past its use-by date is thrown away" },
+        { "id": "covered", "text": "Food is covered, labelled and put in the fridge or freezer" },
+        { "id": "cloths", "text": "Dirty cloths are out for washing" },
+        { "id": "waste", "text": "Bins are emptied and have new bags" },
+        { "id": "surfaces_clean", "text": "Prep areas are clean and disinfected" },
+        { "id": "floors", "text": "Floors are clean and clear" },
+        { "id": "chill_ok", "text": "Fridges and freezers are working and at the right temperature" }
+      ]
+    },
+    "weekly": {
+      "title": "Weekly check",
+      "plain": "Once a week, look back over the diary and the kitchen.",
+      "everyDays": 7,
+      "items": [
+        { "id": "diary_read", "text": "I read this week's diary. Problems are written down" },
+        { "id": "deep_clean", "text": "The deep clean on the cleaning schedule is done" },
+        { "id": "stock", "text": "Stock is rotated: first in, first out" },
+        { "id": "seals", "text": "Fridge and freezer door seals are clean and not split" },
+        { "id": "probe_clean", "text": "The probe thermometer is cleaned and its battery is OK" }
+      ]
+    },
+    "four_weekly": {
+      "title": "4-weekly review",
+      "plain": "Every 4 weeks, check your safe methods still match what you do.",
+      "everyDays": 28,
+      "items": [
+        { "id": "problems", "text": "Any serious or repeated problems are written down with what we did" },
+        { "id": "new_staff", "text": "New staff are trained in our safe methods" },
+        { "id": "suppliers", "text": "Any new suppliers are checked and listed" },
+        { "id": "menu", "text": "New dishes or methods have a safe method" },
+        { "id": "equipment", "text": "New or changed equipment is noted" },
+        { "id": "cleaning", "text": "The cleaning schedule and products are up to date" },
+        { "id": "allergens", "text": "Allergen information is up to date for every dish" }
+      ]
+    },
+    "pest": {
+      "title": "Pest check",
+      "plain": "Look for signs of mice, rats, insects and birds.",
+      "everyDays": 7,
+      "items": [
+        { "id": "droppings", "text": "No droppings, gnaw marks or nests" },
+        { "id": "packets", "text": "No damaged packets or food spills in stores" },
+        { "id": "insects", "text": "No flies, cockroaches or other insects" },
+        { "id": "gaps", "text": "No gaps around pipes, doors or windows" },
+        { "id": "screens", "text": "Fly screens and door strips are in place" },
+        { "id": "bins", "text": "Bins outside are closed and the area is clean" }
+      ]
+    },
+    "delivery": {
+      "title": "Delivery check",
+      "plain": "Check every delivery before you put it away.",
+      "everyDays": 0,
+      "items": [
+        { "id": "packaging", "text": "Packaging is clean and not damaged" },
+        { "id": "dates", "text": "Use-by and best before dates are OK" },
+        { "id": "van", "text": "The van and driver looked clean" },
+        { "id": "labels", "text": "Food is labelled, including allergens" },
+        { "id": "put_away", "text": "Chilled and frozen food was put away straight away" }
+      ]
+    },
+    "calibration": {
+      "title": "Probe check",
+      "plain": "Test the probe in iced water and in boiling water.",
+      "everyDays": 28,
+      "items": [
+        { "id": "clean", "text": "Probe cleaned and disinfected before and after" },
+        { "id": "battery", "text": "Battery is OK" }
+      ]
+    }
+  },
+  "delivery": {
+    "chilledMaxC": 8,
+    "frozenMaxC": -15,
+    "plain": "Chilled food should arrive at 8 °C or below. Frozen food at −15 °C or colder.",
+    "suggestions": [
+      "Rejected the delivery",
+      "Rejected the warm items only",
+      "Told the supplier",
+      "Probed again inside the pack"
+    ],
+    "_note": "−15 °C on delivery is a common supplier tolerance (frozen food may warm a little in transit), not a legal limit. Check what your supplier agreed to."
+  },
+  "calibration": {
+    "icedMinC": -1,
+    "icedMaxC": 1,
+    "boilingMinC": 99,
+    "boilingMaxC": 101,
+    "plain": "In iced water it should read −1 °C to 1 °C. In boiling water, 99 °C to 101 °C.",
+    "suggestions": [
+      "Changed the battery and tested again",
+      "Stopped using this probe",
+      "Bought a new probe",
+      "Sent the probe back to the maker"
+    ],
+    "_note": "SFBB suggests checking probes regularly; we remind every 4 weeks. Very high altitude lowers the boiling point slightly, which does not matter in the UK."
+  },
+  "plan": {
+    "freeUnits": 1,
+    "freeHistoryDays": 7,
+    "exportDays": 92
+  },
+  "reminders": {
+    "openTitle": "Opening checks",
+    "openBody": "Take your fridge and freezer temperatures and tick the opening checks.",
+    "closeTitle": "Closing checks",
+    "closeBody": "Tick the closing checks before you lock up.",
+    "nagTitle": "Today's diary has gaps",
+    "nagBody": "Some temperatures or checks are not done yet. If you're closed today, say so in the app.",
+    "nagMinutesBeforeClose": 60
+  },
+  "fhrs": {
+    "plain": "Inspectors give a score from 0 to 5. They look at three things. Your diary is the main proof for the third one.",
+    "elements": [
+      {
+        "title": "How food is handled",
+        "detail": "Is food prepared, cooked, cooled, reheated and stored safely?",
+        "tips": ["Probe cooked food and log it", "Keep raw and ready-to-eat food apart"]
+      },
+      {
+        "title": "Cleanliness and condition of the building",
+        "detail": "Are the kitchen, equipment and toilets clean and in good repair? Is there good light, air and hand washing?",
+        "tips": ["Tick the opening and closing checks", "Fix broken seals and tiles quickly"]
+      },
+      {
+        "title": "Managing food safety",
+        "detail": "Do you have a food safety system, such as SFBB, and do you keep records? Do staff know what to do?",
+        "tips": ["No gaps in the diary", "A corrective action for every bad reading", "4-weekly reviews done"]
+      }
+    ],
+    "ratings": [
+      { "score": 5, "label": "Very good" },
+      { "score": 4, "label": "Good" },
+      { "score": 3, "label": "Generally satisfactory" },
+      { "score": 2, "label": "Improvement necessary" },
+      { "score": 1, "label": "Major improvement necessary" },
+      { "score": 0, "label": "Urgent improvement necessary" }
+    ],
+    "_note": "This is the Food Hygiene Rating Scheme used in England, Wales and Northern Ireland. Scotland uses the Food Hygiene Information Scheme (Pass or Improvement Required)."
+  },
+  "freeHelp": {
+    "title": "Free guide: FSA Safer Food, Better Business",
+    "url": "https://www.food.gov.uk/business-guidance/safer-food-better-business"
+  }
+}

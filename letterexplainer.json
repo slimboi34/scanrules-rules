@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "England and Wales (most wording also fits Scotland and Northern Ireland, but court and housing rules differ there)",
+  "autoDeleteDays": 30,
+  "reminderDaysBefore": [3, 1],
+  "urgentWithinDays": 7,
+  "maxActions": 5,
+  "maxRelativeDays": 120,
+  "senderOrder": ["court", "police", "hmrc", "dwp", "nhs", "council", "landlord", "school", "bank", "other"],
+  "senders": {
+    "council": {
+      "label": "Council",
+      "defaultName": "your council",
+      "keywords": ["council", "council tax", "city council", "borough council", "district council", "county council", "london borough", "liability order", "housing benefit", "council tax reduction", "electoral registration", "revenues and benefits", "business rates"],
+      "summary": "This letter is from {{sender}}. Councils write about council tax, housing, benefits, bins and parking.",
+      "doNothing": "The council may send more letters and add costs. For money you owe, it could take you to court.",
+      "urgentDoNothing": "The council could ask the magistrates' court for a liability order. That can add costs and lead to enforcement agents (bailiffs).",
+      "actions": [
+        "Check your name, address and account number are right.",
+        "If you can't pay it all, ask the council for a payment plan.",
+        "Ask if you can get a council tax discount or reduction."
+      ]
+    },
+    "hmrc": {
+      "label": "HMRC (tax)",
+      "defaultName": "HMRC",
+      "keywords": ["hmrc", "hm revenue", "revenue and customs", "revenue & customs", "self assessment", "unique taxpayer reference", "utr", "paye", "tax code", "tax return", "child benefit", "tax credits", "national insurance number"],
+      "summary": "This letter is from {{sender}}. HMRC deals with tax, Child Benefit and National Insurance.",
+      "doNothing": "HMRC can add penalties and interest if you pay or reply late.",
+      "urgentDoNothing": "HMRC could add penalties and interest, and take steps to collect the money.",
+      "actions": [
+        "Check your name and tax reference are right.",
+        "Log in to your HMRC online account to check the letter is real.",
+        "Be careful of scams. HMRC will not ask for bank details by text or email."
+      ]
+    },
+    "dwp": {
+      "label": "DWP (benefits)",
+      "defaultName": "the DWP",
+      "keywords": ["department for work and pensions", "dwp", "universal credit", "jobcentre", "jobcentre plus", "personal independence payment", "pip", "pension credit", "state pension", "employment and support allowance", "esa", "jobseeker's allowance", "carer's allowance", "work capability assessment", "mandatory reconsideration"],
+      "summary": "This letter is from {{sender}}. The DWP pays benefits like Universal Credit, PIP and State Pension.",
+      "doNothing": "Your benefit payments could be cut or stopped.",
+      "urgentDoNothing": "Your benefit payments could be cut or stopped soon.",
+      "actions": [
+        "Tell them straight away if you can't go to an appointment.",
+        "Keep a copy of anything you send.",
+        "If you think a decision is wrong, you can ask for a mandatory reconsideration. Usually you have one month from the date of the decision."
+      ],
+      "_note": "Mandatory reconsideration time limit: one month from the decision letter date (can be extended up to 13 months with good reason)."
+    },
+    "nhs": {
+      "label": "NHS (health)",
+      "defaultName": "the NHS",
+      "keywords": ["nhs", "nhs trust", "nhs foundation trust", "hospital", "gp surgery", "outpatient", "outpatients", "clinic", "screening", "vaccination", "prescription", "penalty charge notice nhs", "nhsbsa", "dentist"],
+      "summary": "This letter is from {{sender}}. It may be about an appointment, a test result or a health charge.",
+      "doNothing": "You could miss an appointment or care. If it is a charge, more letters and a penalty may follow.",
+      "actions": [
+        "Check the date, time and place.",
+        "Call to change it if you can't go.",
+        "Take this letter with you."
+      ]
+    },
+    "landlord": {
+      "label": "Landlord or housing",
+      "defaultName": "your landlord",
+      "keywords": ["landlord", "letting agent", "letting agents", "lettings", "tenancy", "tenant", "rent arrears", "your rent", "housing association", "deposit", "notice to quit", "section 21", "section 8", "notice seeking possession", "assured shorthold"],
+      "summary": "This letter is from {{sender}}. It may be about rent, repairs or your tenancy.",
+      "doNothing": "Problems can grow. If it is about rent or asks you to leave, your landlord could go to court.",
+      "urgentDoNothing": "Your landlord could ask a court to end your tenancy. Getting advice early gives you the most choices.",
+      "actions": [
+        "Don't move out just because of a letter. In most cases only a court can make you leave your home.",
+        "Keep paying rent if you can, and keep proof.",
+        "Get free advice from Shelter or Citizens Advice."
+      ]
+    },
+    "court": {
+      "label": "Court or tribunal",
+      "defaultName": "a court or tribunal",
+      "keywords": ["county court", "county court business centre", "magistrates' court", "magistrates court", "crown court", "family court", "high court", "hmcts", "courts and tribunals", "claim form", "claimant", "defendant", "tribunal", "summons", "hearing", "judgment", "money claim", "possession claim", "court order"],
+      "summary": "This is a paper from {{sender}}. It is important. It may be about a claim, a hearing or a decision.",
+      "doNothing": "The court may decide without you. For a money claim, a County Court Judgment (CCJ) could be made against you. A CCJ can stay on your credit file for 6 years.",
+      "urgentDoNothing": "The court may decide without you. For a money claim, a County Court Judgment (CCJ) could be made against you. A CCJ can stay on your credit file for 6 years.",
+      "actions": [
+        "Find the date you must reply by. For a county court money claim it is usually 14 days after you got the papers.",
+        "Reply to the court, not only to the person who made the claim.",
+        "Keep every page together."
+      ],
+      "_note": "County court claim response: 14 days after service of particulars of claim, or 28 days if an acknowledgment of service is filed (CPR 15.4). CCJ stays on credit file 6 years unless paid within one month."
+    },
+    "school": {
+      "label": "School",
+      "defaultName": "your child's school",
+      "keywords": ["school", "primary school", "secondary school", "academy", "headteacher", "head teacher", "pupil", "attendance", "term time", "parents' evening", "school trip", "exclusion", "suspension", "ehcp"],
+      "summary": "This letter is from {{sender}}. It may be about attendance, a meeting, a trip or a payment.",
+      "doNothing": "You may miss a meeting or a deadline. If it is about missed school, the council could give you a fine.",
+      "actions": [
+        "Reply to the school, even if only to say you got the letter.",
+        "Ask for a meeting if you need help or don't understand.",
+        "Ask for an interpreter if you need one."
+      ],
+      "_note": "School absence penalty notice in England: £80 per parent per child, £160 if not paid within 21 days (from August 2024). Check before quoting figures."
+    },
+    "bank": {
+      "label": "Bank or lender",
+      "defaultName": "your bank or lender",
+      "keywords": ["bank", "building society", "sort code", "account number", "overdraft", "credit card", "loan", "mortgage", "arrears", "default notice", "debt collection", "debt collector", "missed payment", "statement", "interest rate", "finance agreement"],
+      "summary": "This letter is from {{sender}}. It may be about your account, a payment or money you owe.",
+      "doNothing": "Charges and interest may grow. Missed payments can hurt your credit score.",
+      "urgentDoNothing": "The lender could pass the debt to a collector or go to court. Missed payments can hurt your credit score.",
+      "actions": [
+        "Call the number on your card or statement, not one from a text or email, if you are unsure.",
+        "Tell the lender if you are struggling. They should look at ways to help.",
+        "Free debt advice: StepChange or National Debtline."
+      ]
+    },
+    "police": {
+      "label": "Police",
+      "defaultName": "the police",
+      "keywords": ["police", "constabulary", "metropolitan police", "notice of intended prosecution", "fixed penalty", "section 172", "speed camera", "safety camera", "crime reference", "officer in the case"],
+      "summary": "This letter is from {{sender}}. It may be about a driving offence, a crime report or a request for information.",
+      "doNothing": "If it asks you to name a driver or reply, not replying can be an offence on its own.",
+      "actions": [
+        "Reply by the date in the letter.",
+        "For a speeding notice, name the driver within 28 days.",
+        "Get free legal advice before you answer questions about a crime."
+      ],
+      "_note": "Section 172 request: the keeper must reply within 28 days; failing to do so carries 6 penalty points and a fine."
+    },
+    "other": {
+      "label": "Other",
+      "defaultName": "an organisation",
+      "keywords": [],
+      "summary": "This is an official letter. We couldn't tell who sent it. Look at the top of the letter for the name.",
+      "doNothing": "If it asks for money or a reply, ignoring it could lead to more letters, costs or action.",
+      "actions": [
+        "Check who sent it, and that it is real.",
+        "Look for a date you must reply by.",
+        "Ask Citizens Advice if you are not sure."
+      ]
+    }
+  },
+  "urgentKeywords": ["court", "final notice", "final demand", "final reminder", "enforcement agent", "enforcement agents", "enforcement notice", "bailiff", "bailiffs", "eviction", "evict", "section 8", "section 21", "notice seeking possession", "possession order", "possession claim", "ccj", "county court judgment", "liability order", "warrant", "summons", "notice to quit", "default notice", "disconnection", "high court enforcement"],
+  "adviceKeywords": ["court", "tribunal", "eviction", "evict", "possession", "section 8", "section 21", "notice to quit", "bailiff", "bailiffs", "enforcement agent", "enforcement agents", "ccj", "county court judgment", "claim form", "summons", "liability order"],
+  "housingKeywords": ["eviction", "evict", "possession", "section 8", "section 21", "notice to quit", "tenancy", "tenant", "landlord", "rent arrears", "letting agent", "your home", "housing association"],
+  "deadlinePhrases": ["by", "before", "no later than", "on or before", "deadline", "due", "must", "within", "until", "reply", "respond", "return", "pay", "payment", "appointment", "hearing", "attend", "expires", "ends"],
+  "deadlineTitles": [
+    {"words": ["hearing", "court", "tribunal"], "title": "Court date"},
+    {"words": ["appointment", "attend", "interview", "assessment", "clinic"], "title": "Appointment"},
+    {"words": ["leave", "possession", "vacate", "move out"], "title": "Date to leave"},
+    {"words": ["pay", "payment", "paid", "owe", "balance", "amount"], "title": "Pay by"},
+    {"words": ["reply", "respond", "response", "return", "send", "contact", "tell", "complete"], "title": "Reply by"}
+  ],
+  "amountKeywords": ["total", "amount due", "amount", "balance", "to pay", "you owe", "owe", "pay", "outstanding", "arrears", "due", "charge", "fine", "penalty", "debt", "costs"],
+  "phoneKeywords": ["call", "phone", "telephone", "tel", "helpline", "contact us", "ring", "freephone"],
+  "bankHolidays": ["2026-01-01", "2026-04-03", "2026-04-06", "2026-05-04", "2026-05-25", "2026-08-31", "2026-12-25", "2026-12-28", "2027-01-01", "2027-03-26", "2027-03-29", "2027-05-03", "2027-05-31", "2027-08-30", "2027-12-27", "2027-12-28"],
+  "_bankHolidaysNote": "England and Wales bank holidays. 2027 dates follow the usual pattern; check gov.uk/bank-holidays when they are confirmed.",
+  "urgentDoNothing": "This looks urgent. If you do nothing, things could move fast: costs could rise, or a decision could be made without you.",
+  "lines": {
+    "amount": "It asks for {{amount}}.",
+    "deadline": "The key date is {{date}}.",
+    "noDeadline": "We didn't find a date to act by. Check the letter to be sure.",
+    "deadlineAction": "Do what the letter asks by {{date}}.",
+    "phoneAction": "Call {{phone}} if you have questions.",
+    "adviceAction": "Get free advice first, before you reply or pay.",
+    "defaultDeadlineTitle": "Act by",
+    "adviceHeading": "Get free advice first",
+    "adviceDetail": "This looks like a court, tribunal or housing letter. Free advisers can help you understand it and reply. Talk to one before you do anything else."
+  },
+  "freeAdvice": [
+    {"id": "citizens_advice", "title": "Citizens Advice", "detail": "Free, private help with letters, money, benefits, housing and court papers.", "url": "https://www.citizensadvice.org.uk/about-us/contact-us/contact-us/contact-us/", "phone": "0800 144 8848", "housingOnly": false, "_note": "Adviceline (England). Wales: 0800 702 2020. Check numbers each year."},
+    {"id": "shelter", "title": "Shelter", "detail": "Free housing advice if you could lose your home.", "url": "https://england.shelter.org.uk/get_help", "phone": "0808 800 4444", "housingOnly": true, "_note": "Shelter England helpline. Check the number each year."}
+  ],
+  "freeHelp": {"title": "Free advice: Citizens Advice", "url": "https://www.citizensadvice.org.uk"},
+  "modelInstructions": "You explain official UK letters to people who may not read English well. Write in plain British English a nine-year-old could follow. Use short sentences and no jargon. Say what the letter is about, what it asks for, and what may happen if the reader does nothing. Use 'may' or 'could': never promise an outcome and never give legal or financial advice. Copy dates, amounts and phone numbers exactly as printed. Leave a field empty if it is not in the letter.",
+  "cloudFallbackURL": "",
+  "_cloudFallbackNote": "Empty hides the option. Set to the deployed relay URL (https://...) from server/README.md to offer cloud help.",
+  "cloudFallbackMinChars": 6000,
+  "cloudFallbackMinConfidence": 0.45
+}

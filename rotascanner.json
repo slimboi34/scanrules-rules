@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "United Kingdom",
+  "confidenceThreshold": 0.8,
+  "calendarAlertMinutes": 60,
+  "shiftReminderMinutes": 60,
+  "plausibleShiftHours": { "min": 3, "max": 13 },
+  "dayWords": [
+    ["mon", "monday"],
+    ["tue", "tues", "tuesday"],
+    ["wed", "weds", "wednesday"],
+    ["thu", "thur", "thurs", "thursday"],
+    ["fri", "friday"],
+    ["sat", "saturday"],
+    ["sun", "sunday"]
+  ],
+  "offWords": ["off", "day off", "rest", "rest day", "rd", "r/d", "x", "-", "–", "n/a", "not working", "free"],
+  "holidayWords": ["h", "hol", "hols", "holiday", "al", "a/l", "annual leave", "leave", "bh", "bank hol", "bank holiday", "vac"],
+  "minimumWage": {
+    "effectiveFrom": "2026-04-01",
+    "source": "https://www.gov.uk/national-minimum-wage-rates",
+    "_note": "April 2026 rates as announced in November 2025. Check against gov.uk before each April.",
+    "bands": [
+      { "id": "21plus", "label": "21 and over", "name": "National Living Wage", "hourlyPence": 1271 },
+      { "id": "18to20", "label": "18 to 20", "name": "National Minimum Wage", "hourlyPence": 1085 },
+      { "id": "under18", "label": "16 or 17", "name": "National Minimum Wage", "hourlyPence": 800 },
+      { "id": "apprentice", "label": "Apprentice (under 19, or in the first year)", "name": "Apprentice rate", "hourlyPence": 800 }
+    ]
+  },
+  "workingTime": {
+    "adult": { "maxWeeklyHours": 48, "minRestHours": 11, "breakAfterHours": 6, "minBreakMinutes": 20 },
+    "young": { "maxWeeklyHours": 40, "minRestHours": 12, "breakAfterHours": 4.5, "minBreakMinutes": 30 },
+    "_note": "Working Time Regulations 1998. The adult 48-hour limit is an average over 17 weeks and you can opt out in writing, so one long week is a flag to check, not a breach. Young workers (under 18) can't opt out."
+  },
+  "overtimeMultipliers": [1.0, 1.25, 1.5, 2.0],
+  "weeklyScanReminder": {
+    "title": "New rota out?",
+    "body": "Snap next week's rota so your shifts are in your calendar."
+  },
+  "freeHelp": { "title": "Free advice: Acas", "url": "https://www.acas.org.uk" },
+  "texts": {
+    "payDisclaimer": "Rough pay before tax, National Insurance and pension. Your payslip is the real figure.",
+    "belowMinimum": "Your rate looks below the legal minimum for your age band. Check your contract and payslip. Acas gives free, private advice.",
+    "atMinimum": "Your rate is at or above the legal minimum for your age band.",
+    "longWeek": "That's more than the usual weekly limit. The limit is an average over 17 weeks and you can choose to opt out, so it may be fine. Ask if you're not sure.",
+    "shortRest": "You should normally get a break of at least {{hours}} hours between working days.",
+    "breakDue": "On shifts longer than {{after}} hours you're normally entitled to a {{minutes}} minute break.",
+    "evidence": "Rota photos are kept with the date you scanned them. If your hours or pay are ever questioned, they show what you were told to work."
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "UK (England, Wales, Scotland, Northern Ireland)",
+  "_source": "The 14 allergens are set by retained Regulation (EU) No 1169/2011, Annex II, and the Food Information Regulations 2014. PPDS rules (Natasha's Law) apply from 1 October 2021. See the Food Standards Agency's allergen guidance for food businesses.",
+  "recheckDays": 90,
+  "_recheckDays_note": "90 days is this app's re-check habit, not a legal limit. Check labels again whenever a supplier, brand or product changes.",
+  "dueSoonDays": 14,
+  "reminderHour": 9,
+  "allergens": [
+    {
+      "id": "celery",
+      "name": "Celery",
+      "short": "Celery",
+      "labelWord": "CELERY",
+      "plain": "Celery stalks, leaves, seeds and root (celeriac). Often in stock, soups, salads and celery salt.",
+      "keywords": ["celery", "celeriac", "celery salt", "celery seed", "celery leaf"],
+      "exclusions": ["celery free", "celery-free"]
+    },
+    {
+      "id": "gluten",
+      "name": "Cereals containing gluten",
+      "short": "Gluten",
+      "labelWord": "GLUTEN",
+      "plain": "Wheat (including spelt and Khorasan wheat), rye, barley and oats. Often in bread, pasta, batter, sauces and soups.",
+      "keywords": ["wheat", "barley", "rye", "oat", "oats", "spelt", "kamut", "khorasan", "durum", "semolina", "couscous", "bulgur", "bulgar", "freekeh", "triticale", "einkorn", "emmer", "farro", "malt", "malted", "seitan", "gluten"],
+      "exclusions": ["gluten free", "gluten-free", "wheat free", "wheat-free", "buckwheat", "oat free"]
+    },
+    {
+      "id": "crustaceans",
+      "name": "Crustaceans",
+      "short": "Crustaceans",
+      "labelWord": "CRUSTACEANS",
+      "plain": "Prawns, crab, lobster, crayfish and similar. Often in shrimp paste and some Thai and Chinese dishes.",
+      "keywords": ["crustacean", "crustaceans", "prawn", "shrimp", "crab", "lobster", "crayfish", "langoustine", "scampi", "krill", "shellfish"],
+      "exclusions": ["crab apple"]
+    },
+    {
+      "id": "eggs",
+      "name": "Eggs",
+      "short": "Eggs",
+      "labelWord": "EGG",
+      "plain": "Eggs from any bird. Often in cakes, mayonnaise, pasta, mousse, glazes and some sauces.",
+      "keywords": ["egg", "egg white", "egg yolk", "albumen", "albumin", "ovalbumin", "lysozyme", "mayonnaise", "meringue"],
+      "exclusions": ["egg free", "egg-free", "eggless", "vegan mayonnaise", "eggplant"]
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "short": "Fish",
+      "labelWord": "FISH",
+      "plain": "Any fish. Often in Worcestershire sauce, fish sauce, pizzas, relishes and salad dressings.",
+      "keywords": ["fish", "anchovy", "anchovies", "cod", "haddock", "salmon", "tuna", "mackerel", "sardine", "pilchard", "pollock", "hake", "plaice", "trout", "herring", "kipper", "basa", "sea bass", "monkfish", "swordfish", "whitebait", "fish sauce"],
+      "exclusions": ["fish free", "fish-free"]
+    },
+    {
+      "id": "lupin",
+      "name": "Lupin",
+      "short": "Lupin",
+      "labelWord": "LUPIN",
+      "plain": "Lupin flour and seeds. Sometimes in bread, pastry and pasta.",
+      "keywords": ["lupin", "lupine", "lupini"],
+      "exclusions": []
+    },
+    {
+      "id": "milk",
+      "name": "Milk",
+      "short": "Milk",
+      "labelWord": "MILK",
+      "plain": "Cow's milk and milk from other animals, and anything made from it: butter, cheese, cream, yoghurt, whey.",
+      "keywords": ["milk", "butter", "buttermilk", "cream", "cheese", "cheddar", "mozzarella", "parmesan", "mascarpone", "ricotta", "paneer", "yoghurt", "yogurt", "whey", "casein", "caseinate", "lactose", "ghee", "creme fraiche", "crème fraîche", "fromage frais", "lactalbumin"],
+      "exclusions": ["cocoa butter", "shea butter", "peanut butter", "nut butter", "almond butter", "cashew butter", "coconut butter", "butter bean", "coconut milk", "coconut cream", "almond milk", "oat milk", "soya milk", "soy milk", "rice milk", "cream of tartar", "cream cracker", "dairy free", "dairy-free", "milk free", "vegan cheese", "salad cream"]
+    },
+    {
+      "id": "molluscs",
+      "name": "Molluscs",
+      "short": "Molluscs",
+      "labelWord": "MOLLUSCS",
+      "plain": "Mussels, oysters, squid, snails and similar. Often in oyster sauce and fish stews.",
+      "keywords": ["mollusc", "molluscs", "mussel", "oyster", "squid", "calamari", "octopus", "clam", "scallop", "cockle", "whelk", "winkle", "snail", "escargot", "cuttlefish", "abalone", "shellfish"],
+      "exclusions": ["oyster mushroom"]
+    },
+    {
+      "id": "mustard",
+      "name": "Mustard",
+      "short": "Mustard",
+      "labelWord": "MUSTARD",
+      "plain": "Mustard seeds, powder and liquid mustard. Often in dressings, marinades, sauces and curries.",
+      "keywords": ["mustard", "mustard seed", "mustard flour"],
+      "exclusions": ["mustard free"]
+    },
+    {
+      "id": "treenuts",
+      "name": "Tree nuts",
+      "short": "Tree nuts",
+      "labelWord": "NUTS",
+      "plain": "Almonds, hazelnuts, walnuts, cashews, pecans, Brazil nuts, pistachios and macadamia (Queensland) nuts. Often in pesto, marzipan, praline and nut oils.",
+      "keywords": ["almond", "hazelnut", "walnut", "cashew", "pecan", "brazil nut", "pistachio", "macadamia", "queensland nut", "nut", "marzipan", "praline", "frangipane"],
+      "exclusions": ["pine nut", "tiger nut", "ground nut", "monkey nut", "nut free", "nut-free", "coconut"],
+      "_note": "A plain 'nuts' on a label is treated as tree nuts. Pine nuts and coconut are not one of the 14."
+    },
+    {
+      "id": "peanuts",
+      "name": "Peanuts",
+      "short": "Peanuts",
+      "labelWord": "PEANUTS",
+      "plain": "Peanuts (groundnuts) and peanut oil. Often in satay, sauces, cakes and some Asian dishes.",
+      "keywords": ["peanut", "groundnut", "ground nut", "monkey nut", "arachis"],
+      "exclusions": ["peanut free", "peanut-free"]
+    },
+    {
+      "id": "sesame",
+      "name": "Sesame",
+      "short": "Sesame",
+      "labelWord": "SESAME",
+      "plain": "Sesame seeds and sesame oil. Often in bread, breadsticks, hummus (tahini) and stir-fries.",
+      "keywords": ["sesame", "tahini", "tahina", "gomasio", "halva", "benne"],
+      "exclusions": ["sesame free", "sesame-free"]
+    },
+    {
+      "id": "soya",
+      "name": "Soya",
+      "short": "Soya",
+      "labelWord": "SOYA",
+      "plain": "Soya beans and anything made from them: tofu, soy sauce, edamame, miso. Often in desserts, ice cream and vegetarian products.",
+      "keywords": ["soya", "soy", "soybean", "soya bean", "edamame", "tofu", "tempeh", "miso", "tamari", "shoyu", "natto"],
+      "exclusions": ["soya free", "soy free", "soya-free"]
+    },
+    {
+      "id": "sulphites",
+      "name": "Sulphur dioxide and sulphites (over 10 mg/kg or 10 mg/litre)",
+      "short": "Sulphites",
+      "labelWord": "SULPHITES",
+      "plain": "A preservative at more than 10 mg per kg or litre. Often in dried fruit, wine, beer, vinegar, sausages and soft drinks.",
+      "keywords": ["sulphite", "sulfite", "sulphur dioxide", "sulfur dioxide", "metabisulphite", "metabisulfite", "bisulphite", "bisulfite", "e220", "e221", "e222", "e223", "e224", "e225", "e226", "e227", "e228"],
+      "exclusions": ["sulphite free", "sulfite free"],
+      "_note": "Only declared above 10 mg/kg or 10 mg/litre. If a label names sulphites, treat the product as containing them."
+    }
+  ],
+  "reading": {
+    "ingredientsHeader": "ingredient",
+    "ingredientsEnd": ["allergy advice", "allergen advice", "allergy information", "for allergens", "nutrition", "typical values", "storage", "store in", "store at", "keep refrigerated", "best before", "use by", "once opened", "net weight", "produced by", "produced in", "made by", "packed by", "packed in", "manufactured by", "suitable for", "may contain", "may also contain", "made in a factory", "made on a site", "produced in a factory", "manufactured in a factory", "manufactured on a site"],
+    "mayContainPhrases": ["may contain", "may also contain", "might contain", "traces of", "made in a factory", "made in a kitchen", "made on a site", "made on a line", "made in an environment", "produced in a factory", "produced on a site", "produced on a line", "manufactured in a factory", "manufactured on a site", "manufactured on a line", "packed in a factory", "packed on a site", "factory that handles", "factory which handles", "site that handles", "site which handles", "also handles", "cannot guarantee", "can't guarantee", "cannot exclude", "not suitable for", "risk of cross"],
+    "containsPhrases": ["contains", "allergy advice", "allergen advice", "allergens:"],
+    "ignorePhrases": ["for allergens", "in bold", "allergens are", "free from", "suitable for vegetarians", "suitable for vegans"]
+  },
+  "menu": {
+    "sectionWords": ["starters", "starter", "mains", "main", "main courses", "main course", "desserts", "dessert", "puddings", "sides", "side dishes", "drinks", "hot drinks", "cold drinks", "soft drinks", "breakfast", "brunch", "lunch", "dinner", "kids", "kids menu", "children's menu", "childrens menu", "specials", "today's specials", "specials board", "menu", "our menu", "sandwiches", "salads", "soups", "cakes", "pizzas", "burgers", "wraps", "extras", "add ons", "sauces", "vegetarian", "vegan", "small plates", "sharing", "to share", "nibbles", "light bites", "afternoon tea", "set menu", "wines", "beers", "cocktails", "coffee", "tea", "toasties", "jacket potatoes", "grill", "from the grill", "pasta"],
+    "skipIfContains": ["allerg", "please", "service charge", "vat", "www.", "http", "@", "tel:", "opening", "gratuity", "ask a member"],
+    "stripPatterns": ["\\((?:v|vg|ve|vo|vgo|gf|gfo|df|n|h)(?:\\s*[,/]\\s*(?:v|vg|ve|vo|vgo|gf|gfo|df|n|h))*\\)", "\\b\\d+\\s?kcal\\b"],
+    "maxWords": 8,
+    "minLetters": 3
+  },
+  "labelFormats": [
+    {
+      "id": "a4_2x7",
+      "name": "A4 sheet, 14 labels (99.1 × 38.1 mm)",
+      "pageWidthMM": 210, "pageHeightMM": 297,
+      "labelWidthMM": 99.1, "labelHeightMM": 38.1,
+      "marginTopMM": 15.15, "marginLeftMM": 4.65,
+      "gapXMM": 2.5, "gapYMM": 0,
+      "columns": 2, "rows": 7
+    },
+    {
+      "id": "a4_2x4",
+      "name": "A4 sheet, 8 labels (99.1 × 67.7 mm)",
+      "pageWidthMM": 210, "pageHeightMM": 297,
+      "labelWidthMM": 99.1, "labelHeightMM": 67.7,
+      "marginTopMM": 13.1, "marginLeftMM": 4.65,
+      "gapXMM": 2.5, "gapYMM": 0,
+      "columns": 2, "rows": 4
+    },
+    {
+      "id": "a4_3x7",
+      "name": "A4 sheet, 21 labels (63.5 × 38.1 mm)",
+      "pageWidthMM": 210, "pageHeightMM": 297,
+      "labelWidthMM": 63.5, "labelHeightMM": 38.1,
+      "marginTopMM": 15.15, "marginLeftMM": 7.25,
+      "gapXMM": 2.5, "gapYMM": 0,
+      "columns": 3, "rows": 7
+    }
+  ],
+  "_labelFormats_note": "Sizes match common A4 label sheets. Print one test sheet on plain paper with outlines on, hold it over your labels, and check the margins for your printer.",
+  "ppds": {
+    "ingredientsHeading": "Ingredients:",
+    "mayContainPrefix": "May contain:",
+    "containsJoiner": "contains",
+    "minFontPt": 6.5,
+    "_minFontPt_note": "The law asks for an x-height of at least 1.2 mm (0.9 mm if the pack's largest surface is under 80 cm²). 1.2 mm is about 6.5 pt in the system font. Needs checking against your own printed labels.",
+    "maxFontPt": 10,
+    "requirements": [
+      "The name of the food.",
+      "The full ingredients list, biggest by weight first.",
+      "The 14 allergens emphasised every time they appear (this app uses CAPITALS in bold)."
+    ]
+  },
+  "matrix": {
+    "title": "Allergen matrix",
+    "legend": "✓ = contains this allergen.   may = may contain it (cross-contact risk).   Blank = not in our recipe.",
+    "staffNote": "Ask a member of staff before you order if you have a food allergy or intolerance.",
+    "disclaimer": "Made from our ingredient labels. Recipes and suppliers can change. Check this matrix every time a recipe or supplier changes."
+  },
+  "freeHelp": {
+    "title": "Free guidance: Food Standards Agency",
+    "url": "https://www.food.gov.uk/business-guidance/allergen-guidance-for-food-businesses"
+  }
+}

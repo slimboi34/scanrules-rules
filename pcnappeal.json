@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "England and Wales",
+  "reminderDays": [10, 13],
+  "issuers": {
+    "council": {
+      "label": "Council penalty charge (PCN)",
+      "plain": "This is a council penalty under the Traffic Management Act 2004. It is a civil penalty, not a criminal fine, and there is a free, independent tribunal if the council says no.",
+      "discountDays": 14,
+      "challengeDays": 14,
+      "challengeLabel": "Informal challenge",
+      "nextStep": "If the council rejects your challenge it usually re-offers the discount for 14 days. If you don't pay, it sends a Notice to Owner; you then have 28 days to make formal representations, and after that 28 days to appeal to the Traffic Penalty Tribunal.",
+      "tribunal": "Traffic Penalty Tribunal",
+      "tribunalURL": "https://www.trafficpenaltytribunal.gov.uk",
+      "template": "informal_council"
+    },
+    "tfl": {
+      "label": "London penalty charge (TfL or a London borough)",
+      "plain": "This is a London penalty charge. It is a civil penalty, not a criminal fine. If your challenge is rejected you can appeal for free to London Tribunals.",
+      "discountDays": 14,
+      "challengeDays": 14,
+      "challengeLabel": "Informal challenge",
+      "nextStep": "If your challenge is rejected and you don't pay, a Notice to Owner follows; you then have 28 days to make formal representations, and after that 28 days to appeal to London Tribunals.",
+      "tribunal": "London Tribunals",
+      "tribunalURL": "https://www.londontribunals.gov.uk",
+      "template": "informal_council"
+    },
+    "private": {
+      "label": "Private parking charge",
+      "plain": "This is a private company's invoice for breaking the terms on its signs, not a fine. It can only be enforced through the civil courts. Appeal to the company first; if it says no, you can go to an independent appeals service (POPLA or the IAS) for free.",
+      "discountDays": 14,
+      "challengeDays": 28,
+      "challengeLabel": "Appeal to the parking company",
+      "nextStep": "If the company rejects your appeal it must give you a code for the independent appeals service: POPLA (British Parking Association members, 28 days) or the IAS (International Parking Community members, 21 days).",
+      "tribunal": "POPLA or IAS",
+      "tribunalURL": "https://www.popla.co.uk",
+      "template": "private_operator"
+    },
+    "police": {
+      "label": "Police fixed penalty notice",
+      "plain": "This is a police fixed penalty. There is no informal appeal: you either pay within 28 days or ask for a court hearing. Get free advice before choosing court.",
+      "discountDays": 0,
+      "challengeDays": 28,
+      "challengeLabel": "Pay or request a court hearing",
+      "nextStep": "If you do nothing within 28 days the penalty can be increased by 50% and registered against you.",
+      "tribunal": "Magistrates' court",
+      "tribunalURL": "https://www.gov.uk/fixed-penalty-notices",
+      "template": "police_hearing"
+    }
+  },
+  "grounds": [
+    {"id": "no_contravention", "issuers": ["council", "tfl"], "title": "I didn't break the rule on the ticket", "detail": "For example, I was parked legally, or in a bay I was allowed to use.", "text": "The alleged contravention did not occur. {{details}}"},
+    {"id": "signs_unclear", "issuers": ["council", "tfl", "private"], "title": "The signs or lines were missing, faded or unclear", "detail": "Take photos of the signs and lines from where you parked.", "text": "The signs and/or road markings at this location were not adequate to inform a driver of the restriction. {{details}} Photographs are enclosed."},
+    {"id": "loading", "issuers": ["council", "tfl"], "title": "I was loading or unloading", "detail": "Heavy or bulky goods, or a delivery that took time.", "text": "The vehicle was being loaded or unloaded at the time, which is an exemption to this restriction. {{details}}"},
+    {"id": "permit_badge", "issuers": ["council", "tfl", "private"], "title": "I had a valid permit, Blue Badge or ticket", "detail": "It was displayed, or it fell off, or the machine didn't print.", "text": "A valid permit, Blue Badge or pay-and-display ticket covered this vehicle at the time. {{details}} A copy is enclosed."},
+    {"id": "paid", "issuers": ["council", "tfl", "private"], "title": "I paid for parking", "detail": "Pay-by-phone, app or machine. Attach the receipt or screenshot.", "text": "I paid for parking for this period. {{details}} Proof of payment is enclosed."},
+    {"id": "grace_period", "issuers": ["council", "tfl", "private"], "title": "I was only a few minutes over", "detail": "Councils must allow at least 10 minutes' grace; private operators' codes also set a grace period.", "text": "The vehicle was within the grace period that must be allowed at the end of a paid or permitted parking period. {{details}}"},
+    {"id": "broken_down", "issuers": ["council", "tfl", "private"], "title": "My car broke down", "detail": "Recovery or repair receipts help.", "text": "The vehicle had broken down and could not be moved. {{details}} Evidence is enclosed."},
+    {"id": "emergency", "issuers": ["council", "tfl", "private"], "title": "There was a medical or other emergency", "detail": "Explain briefly; a letter from a doctor or hospital helps.", "text": "I ask you to cancel this charge because of an emergency: {{details}}"},
+    {"id": "not_owner", "issuers": ["council", "tfl"], "title": "I wasn't the owner at the time", "detail": "I'd sold it, or not yet bought it.", "text": "I was not the owner of the vehicle at the time of the alleged contravention. {{details}}"},
+    {"id": "stolen", "issuers": ["council", "tfl", "private"], "title": "The vehicle was stolen", "detail": "Give the crime reference number.", "text": "The vehicle had been taken without my consent. {{details}}"},
+    {"id": "not_driver_keeper", "issuers": ["private"], "title": "I'm the keeper and I won't name the driver", "detail": "You don't have to say who was driving. The company can only pursue the keeper if it followed the Protection of Freedoms Act 2012 exactly.", "text": "I am the registered keeper. I am not obliged to name the driver and I decline to do so. Unless you can show you have met every requirement of Schedule 4 of the Protection of Freedoms Act 2012, you cannot hold me liable as keeper. {{details}}"},
+    {"id": "notice_late", "issuers": ["private"], "title": "The letter arrived too late", "detail": "A camera (ANPR) notice must reach the keeper within 14 days of the parking event.", "text": "The Notice to Keeper was not given within the period required by Schedule 4 of the Protection of Freedoms Act 2012. {{details}}"},
+    {"id": "procedural", "issuers": ["council", "tfl"], "title": "The ticket itself has mistakes", "detail": "Wrong registration, wrong street, wrong date, missing information.", "text": "The penalty charge notice contains errors and does not comply with the regulations: {{details}}"},
+    {"id": "other", "issuers": ["council", "tfl", "private", "police"], "title": "Something else", "detail": "Describe it in your own words.", "text": "{{details}}"}
+  ],
+  "templates": {
+    "informal_council": "{{name}}\n{{address}}\n\n{{today}}\n\n{{issuer}}\nParking Services\n\nPenalty Charge Notice: {{pcn}}\nVehicle registration: {{vrm}}\nDate issued: {{issued_date}}\nLocation: {{location}}\n\nDear Sir or Madam,\n\nI am writing to make an informal challenge to the penalty charge notice above, within 14 days of it being issued.\n\n{{grounds_text}}\n\nI ask you to cancel the penalty charge notice. If you do not, I ask that the discounted amount is offered again for a further 14 days.\n\nYours faithfully,\n\n{{name}}",
+    "private_operator": "{{name}}\n{{address}}\n\n{{today}}\n\n{{issuer}}\n\nParking Charge Notice: {{pcn}}\nVehicle registration: {{vrm}}\nDate: {{issued_date}}\nLocation: {{location}}\n\nDear Sir or Madam,\n\nI dispute this parking charge and appeal against it.\n\n{{grounds_text}}\n\nPlease cancel the charge. If you reject this appeal, please send me a POPLA or IAS verification code so I can appeal independently. Please treat this as a formal dispute: do not pass my details to a debt collector while it is open.\n\nYours faithfully,\n\n{{name}}",
+    "police_hearing": "{{name}}\n{{address}}\n\n{{today}}\n\n{{issuer}}\nCentral Ticket Office\n\nFixed Penalty Notice: {{pcn}}\nVehicle registration: {{vrm}}\nDate issued: {{issued_date}}\nLocation: {{location}}\n\nDear Sir or Madam,\n\nI do not accept the fixed penalty notice above and I request a court hearing.\n\n{{grounds_text}}\n\nYours faithfully,\n\n{{name}}"
+  },
+  "issuerKeywords": {
+    "police": ["fixed penalty", "police", "constabulary", "central ticket office"],
+    "tfl": ["transport for london", "tfl", "london borough", "royal borough of", "city of westminster", "london tribunals"],
+    "private": ["parking charge notice", "popla", "independent appeals service", "protection of freedoms act", "ltd", "limited", "parkingeye", "euro car parks", "ncp", "britannia parking", "smart parking", "excel parking", "anpr"],
+    "council": ["penalty charge notice", "council", "borough", "civil enforcement officer", "traffic management act", "traffic penalty tribunal"]
+  },
+  "freeHelp": {"title": "Free help: Citizens Advice on parking tickets", "url": "https://www.citizensadvice.org.uk/consumer/parking-tickets/"}
+}

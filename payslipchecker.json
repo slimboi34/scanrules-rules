@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "UK (England, Wales, Scotland, Northern Ireland)",
+  "_about": "Every rate, threshold, keyword and template the payslip checks use. Money is in pence unless a key ends in Pounds. Bands are on taxable pay (after the tax-free allowance), per year. Guidance only.",
+  "defaultTaxYear": "2026-27",
+  "deltaThresholdPence": 500,
+  "nmwTolerancePence": 50,
+  "periods": {
+    "weekly": { "label": "Weekly", "perYear": 52, "days": 7 },
+    "fortnightly": { "label": "Every 2 weeks", "perYear": 26, "days": 14 },
+    "fourWeekly": { "label": "Every 4 weeks", "perYear": 13, "days": 28 },
+    "monthly": { "label": "Monthly", "perYear": 12, "days": 30 }
+  },
+  "taxCodeNumber": {
+    "multiplier": 10,
+    "add": 9,
+    "_note": "HMRC turns a code number into an allowance by multiplying by 10 and adding 9 (1257L = £12,579). K codes are treated the same way here; check against HMRC's K-code tables."
+  },
+  "emergencyCodes": ["1257L W1", "1257L M1", "1257L X", "S1257L W1", "S1257L M1", "S1257L X", "C1257L W1", "C1257L M1", "C1257L X", "0T", "S0T", "C0T", "0T W1", "0T M1", "BR", "SBR", "CBR", "BR W1", "BR M1"],
+  "standardCode": "1257L",
+  "taxYears": {
+    "2026-27": {
+      "label": "6 April 2026 to 5 April 2027",
+      "personalAllowancePounds": 12570,
+      "taperThresholdPounds": 100000,
+      "taperPoundsLostPerPoundOver": 0.5,
+      "kCodeCapPercent": 50,
+      "rukBands": [
+        { "name": "basic", "upToPounds": 37700, "rate": 0.20 },
+        { "name": "higher", "upToPounds": 125140, "rate": 0.40 },
+        { "name": "additional", "upToPounds": null, "rate": 0.45 }
+      ],
+      "scottishBands": [
+        { "name": "starter", "upToPounds": 3967, "rate": 0.19 },
+        { "name": "basic", "upToPounds": 16956, "rate": 0.20 },
+        { "name": "intermediate", "upToPounds": 31092, "rate": 0.21 },
+        { "name": "higher", "upToPounds": 62430, "rate": 0.42 },
+        { "name": "advanced", "upToPounds": 125140, "rate": 0.45 },
+        { "name": "top", "upToPounds": null, "rate": 0.48 }
+      ],
+      "_scottishNote": "Scottish 2026-27 bands as announced in the Scottish Budget (starter to £16,537 and basic to £29,526 of total income, others frozen), shown here as taxable pay after £12,570. Needs checking against the Scottish Rate Resolution 2026-27.",
+      "flatRates": {
+        "BR": 0.20, "D0": 0.40, "D1": 0.45,
+        "SBR": 0.20, "SD0": 0.21, "SD1": 0.42, "SD2": 0.45, "SD3": 0.48,
+        "CBR": 0.20, "CD0": 0.40, "CD1": 0.45
+      },
+      "ni": {
+        "category": "A",
+        "mainRate": 0.08,
+        "upperRate": 0.02,
+        "primaryThresholdAnnualPounds": 12570,
+        "upperEarningsLimitAnnualPounds": 50270,
+        "periodThresholds": {
+          "weekly": { "primaryThreshold": 24200, "upperEarningsLimit": 96700 },
+          "fortnightly": { "primaryThreshold": 48400, "upperEarningsLimit": 193400 },
+          "fourWeekly": { "primaryThreshold": 96700, "upperEarningsLimit": 386700 },
+          "monthly": { "primaryThreshold": 104800, "upperEarningsLimit": 418900 }
+        }
+      },
+      "nmw": {
+        "effectiveFrom": "2026-04-01",
+        "bands": [
+          { "id": "21plus", "label": "21 or over", "ratePence": 1271 },
+          { "id": "18to20", "label": "18 to 20", "ratePence": 1085 },
+          { "id": "16to17", "label": "16 or 17", "ratePence": 800 }
+        ],
+        "apprenticeRatePence": 800,
+        "apprenticeRule": "Apprentices aged under 19, or in the first year of their apprenticeship, can be paid the apprentice rate. Other apprentices get the rate for their age.",
+        "accommodationOffsetDailyPence": 1066,
+        "_accommodationNote": "£10.66 a day is the April 2025 offset. The April 2026 figure may be higher; check gov.uk/national-minimum-wage-accommodation."
+      },
+      "pension": {
+        "qualifyingLowerAnnualPounds": 6240,
+        "qualifyingUpperAnnualPounds": 50270,
+        "triggerAnnualPounds": 10000,
+        "employeeMinPercent": 5,
+        "reliefAtSourceMinPercent": 4,
+        "employerMinPercent": 3,
+        "minimumAge": 22,
+        "_note": "Auto-enrolment thresholds assumed unchanged for 2026-27 (DWP review). Check gov.uk/workplace-pensions."
+      },
+      "holiday": {
+        "statutoryWeeks": 5.6,
+        "rolledUpPercent": 12.07
+      }
+    }
+  },
+  "keywords": {
+    "gross": ["total gross pay", "gross pay", "total gross", "total pay", "gross"],
+    "tax": ["paye tax", "income tax", "paye", "tax"],
+    "ni": ["national insurance", "employee ni", "ee ni", "nat ins", "nic", "ni"],
+    "pension": ["employee pension", "pension ee", "ee pension", "pension contribution", "pension", "nest", "salary sacrifice"],
+    "net": ["net pay", "take home pay", "take home", "net"],
+    "taxCode": ["tax code", "taxcode", "code"],
+    "taxPeriod": ["tax period", "period no", "pay period", "period", "tax week", "tax month"],
+    "grossToDate": ["taxable pay to date", "taxable pay ytd", "gross to date", "gross ytd", "taxable ytd"],
+    "taxToDate": ["tax paid to date", "tax to date", "tax ytd", "paye ytd"],
+    "payDate": ["pay date", "payment date", "date paid", "period ending", "period end", "date"],
+    "employerHints": ["ltd", "limited", "plc", "llp", "council", "nhs", "trust", "group", "services", "university"],
+    "exclude": ["to date", "ytd", "year to date", "tax code", "taxable", "tax period", "tax ref", "tax office", "ni number", "ni no", "ni letter", "ni category", "net change", "employer", "er ni", "er pension", "employers"],
+    "hours": ["basic", "hours", "hrs", "hourly", "rate", "standard pay"],
+    "frequency": {
+      "weekly": ["weekly", "week no", "wk", "tax week"],
+      "fortnightly": ["fortnightly", "two weekly", "2 weekly", "bi-weekly"],
+      "fourWeekly": ["four weekly", "4 weekly", "4-weekly", "lunar"],
+      "monthly": ["monthly", "month", "mth", "tax month"]
+    },
+    "earnings": ["basic pay", "basic", "salary", "overtime", "holiday pay", "holiday", "bonus", "commission", "ssp", "sick pay", "smp", "shift", "allowance", "back pay", "arrears", "tips", "tronc"],
+    "holiday": ["holiday", "annual leave", "hol pay", "rolled up", "rolled-up", "leave pay"]
+  },
+  "deductionTypes": [
+    { "id": "studentLoan", "label": "Student loan", "keywords": ["student loan", "sl plan", "plan 1", "plan 2", "plan 4", "plan 5", "postgraduate loan", "pgl"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Money paid back on a student loan. It is taken once you earn over the threshold for your plan." },
+    { "id": "union", "label": "Union fees", "keywords": ["union", "unison", "unite", "gmb", "usdaw", "rcn"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Fees for a trade union you joined." },
+    { "id": "charity", "label": "Charity giving", "keywords": ["give as you earn", "payroll giving", "charity", "gaye"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Money you chose to give to charity from your pay." },
+    { "id": "courtOrder", "label": "Court order", "keywords": ["attachment of earnings", "aeo", "deo", "child maintenance", "cms", "council tax attachment"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Money a court or agency told your employer to take, for a debt or child support." },
+    { "id": "benefits", "label": "Work scheme you signed up to", "keywords": ["cycle to work", "cycle scheme", "season ticket", "childcare voucher", "gym", "car scheme", "electric car", "health cash plan", "share save", "sharesave", "sports club"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "A scheme you chose to join through work." },
+    { "id": "uniform", "label": "Uniform or tools", "keywords": ["uniform", "workwear", "ppe", "tools", "equipment", "boots", "kit"], "explained": true, "reducesMinimumWage": true, "accommodation": false, "plain": "Money for a uniform, tools or kit. This counts against minimum wage: after it is taken off, your pay must still be at least the minimum wage." },
+    { "id": "shortage", "label": "Shortage or breakage", "keywords": ["till shortage", "shortage", "breakage", "damage", "deficiency", "fine", "penalty"], "explained": false, "reducesMinimumWage": true, "accommodation": false, "plain": "Money taken for a till shortage or damage. Your contract must allow this. In retail it can be no more than 10% of your gross pay each payday." },
+    { "id": "accommodation", "label": "Accommodation", "keywords": ["accommodation", "rent", "lodging", "housing", "board"], "explained": true, "reducesMinimumWage": false, "accommodation": true, "plain": "Rent for a home your employer gives you. For minimum wage, only a set amount a day can count. Anything above that is taken off your pay before the minimum wage check." },
+    { "id": "overpayment", "label": "Paying back an overpayment", "keywords": ["overpayment", "over payment", "recovery", "advance", "loan repayment", "salary advance"], "explained": false, "reducesMinimumWage": false, "accommodation": false, "plain": "Money taken back because you were paid too much before, or a loan from work. Your employer should tell you about this first." },
+    { "id": "food", "label": "Meals", "keywords": ["canteen", "meals", "food", "staff meals"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Money for food you bought at work." },
+    { "id": "parking", "label": "Parking", "keywords": ["parking", "car park", "permit"], "explained": true, "reducesMinimumWage": false, "accommodation": false, "plain": "Money for a parking space at work." }
+  ],
+  "taxCodeGlossary": [
+    { "code": "number", "title": "The number", "plain": "The number tells your employer how much you can earn in a year before you pay tax. Add a 9 on the end to get pounds. 1257 means £12,579." },
+    { "code": "L", "title": "L", "plain": "L means you get the normal tax-free amount. Most people have an L code." },
+    { "code": "M", "title": "M", "plain": "M means your partner gave you some of their tax-free amount (Marriage Allowance). So you can earn a bit more before tax." },
+    { "code": "N", "title": "N", "plain": "N means you gave some of your tax-free amount to your partner (Marriage Allowance). So you pay tax a bit sooner." },
+    { "code": "T", "title": "T", "plain": "T means HMRC needs to look at your code again. It may be because of other income or other things they know about." },
+    { "code": "K", "title": "K", "plain": "K means you have something to pay tax on that is not in your pay, like a company car or tax you owe. So instead of tax-free pay, extra pay is taxed. You can never pay more than half your pay in tax with a K code." },
+    { "code": "S", "title": "S at the start", "plain": "S means you live in Scotland. Scottish tax rates are used." },
+    { "code": "C", "title": "C at the start", "plain": "C means you live in Wales. Welsh rates are used. Right now they are the same as England's." },
+    { "code": "BR", "title": "BR", "plain": "BR means all your pay from this job is taxed at 20%. You get no tax-free amount here. That is normal for a second job. On your only job it is often a mistake." },
+    { "code": "D0", "title": "D0", "plain": "D0 means all your pay from this job is taxed at the higher rate (40%, or 21% in Scotland). It is used for a second job when you already earn a lot." },
+    { "code": "D1", "title": "D1", "plain": "D1 means all your pay from this job is taxed at the additional rate (45%, or 42% in Scotland). It is used for a second job when you earn a lot." },
+    { "code": "D2", "title": "D2", "plain": "D2 is only for Scotland. All pay from this job is taxed at 45%." },
+    { "code": "D3", "title": "D3", "plain": "D3 is only for Scotland. All pay from this job is taxed at 48%." },
+    { "code": "NT", "title": "NT", "plain": "NT means no tax is taken from this pay. It is rare. It is used in special cases agreed with HMRC." },
+    { "code": "0T", "title": "0T", "plain": "0T means you get no tax-free amount. All your pay is taxed. It is often used when your employer doesn't have your details yet. You may be paying too much." },
+    { "code": "W1", "title": "W1 or M1 at the end", "plain": "W1 or M1 is an emergency code. Each payday is taxed on its own, as if it were the first week or month of the year. You don't get back tax you overpaid earlier in the year until it is fixed." },
+    { "code": "M1", "title": "W1 or M1 at the end", "plain": "W1 or M1 is an emergency code. Each payday is taxed on its own, as if it were the first week or month of the year. You don't get back tax you overpaid earlier in the year until it is fixed." },
+    { "code": "X", "title": "X at the end", "plain": "X is an emergency code. Each payday is taxed on its own. You don't get back tax you overpaid earlier in the year until it is fixed." },
+    { "code": "1257L", "title": "1257L", "plain": "1257L is the most common tax code. You can earn £12,570 a year before you pay tax." }
+  ],
+  "messages": {
+    "tax_year_fallback": { "title": "We used {{year}} tax rates", "explanation": "We don't have the rates for the date on this payslip yet. The numbers may be a little out.", "action": null, "letter": null },
+    "tax_code_unknown": { "title": "We couldn't read your tax code", "explanation": "Without a tax code we can't check your tax. It is usually near the top of the payslip, like 1257L.", "action": "Tap Edit and type in your tax code.", "letter": null },
+    "emergency_owed": { "title": "You may be owed about {{amount}}", "explanation": "Your tax code is {{code}}. That is an emergency code. On the normal code ({{standard}}) we think your tax would be {{expected}}, not {{actual}}. So you may have paid about {{amount}} too much tax on this payslip.", "action": "Check your tax code with HMRC, or ask payroll to fix it. Tax paid on an emergency code is usually paid back once the code is fixed.", "letter": "My tax code is {{code}}, which looks like an emergency code. On {{standard}} my tax would be about {{expected}}, but {{actual}} was taken. Please could you check my code with HMRC and refund any overpaid tax." },
+    "emergency_code": { "title": "You are on an emergency tax code", "explanation": "Your tax code is {{code}}. It is used when your employer or HMRC doesn't have all your details. It may not be costing you money yet, but it can.", "action": "Check your tax code with HMRC. If this is your only job, ask payroll to update it.", "letter": "My tax code is {{code}}, which looks like an emergency code. Please could you check it with HMRC." },
+    "tax_over": { "title": "You may have paid {{amount}} too much tax", "explanation": "From your pay and tax code ({{code}}) we think the tax should be about {{expected}}. Your payslip shows {{actual}}.{{caveat}}", "action": "Ask payroll how they worked out your tax.", "letter": "My tax for this period was {{actual}}. From my pay and tax code {{code}} I expected about {{expected}}, a difference of {{amount}}." },
+    "tax_under": { "title": "Your tax looks {{amount}} lower than we expect", "explanation": "From your pay and tax code ({{code}}) we think the tax should be about {{expected}}. Your payslip shows {{actual}}. If too little tax is taken, HMRC may ask for it later.{{caveat}}", "action": "Ask payroll to check it, so you don't get a bill later.", "letter": "My tax for this period was {{actual}}. From my pay and tax code {{code}} I expected about {{expected}}. Please could you check this so I don't owe tax later." },
+    "tax_caveat": { "title": "", "explanation": " If your pay changed earlier this tax year, a small difference can be normal. Add your 'taxable pay to date' and 'tax to date' for a closer check.", "action": null, "letter": null },
+    "tax_ok": { "title": "Your tax looks right", "explanation": "From your pay and tax code ({{code}}) we expected about {{expected}}. Your payslip shows {{actual}}.", "action": null, "letter": null },
+    "taper": { "title": "Your tax-free amount may be smaller", "explanation": "Over a year you would earn about {{annual}}. Over £100,000, you lose £1 of tax-free pay for every £2 you earn. Your tax-free amount could be about {{allowance}}, not £12,570.", "action": "Check your tax code with HMRC so you don't get a bill later.", "letter": null },
+    "k_code": { "title": "You have a K code", "explanation": "A K code means extra pay is taxed, for example for a company car or tax you owe from before. Tax can never be more than half of your pay.", "action": "If you don't know why you have a K code, check with HMRC.", "letter": null },
+    "flat_code": { "title": "All your pay here is taxed at one rate", "explanation": "Your code is {{code}}. You get no tax-free amount from this job. That is right for a second job. If this is your only job, it is probably wrong.", "action": "If this is your only job, check your tax code with HMRC.", "letter": null },
+    "ni_over": { "title": "National Insurance looks {{amount}} too high", "explanation": "On pay of {{gross}} we think National Insurance should be about {{expected}}. Your payslip shows {{actual}}.", "action": "Ask payroll which NI letter they use for you. Most people are on letter A.", "letter": "My National Insurance was {{actual}}. On my pay I expected about {{expected}}. Please could you check my NI category letter." },
+    "ni_under": { "title": "National Insurance looks lower than we expect", "explanation": "On pay of {{gross}} we think National Insurance should be about {{expected}}. Your payslip shows {{actual}}. Salary sacrifice or a different NI letter can explain this.", "action": "If you're not sure why, ask payroll.", "letter": null },
+    "ni_none": { "title": "No National Insurance was taken", "explanation": "On pay of {{gross}} we expected about {{expected}}. That is normal if you are over State Pension age.", "action": "If you are under State Pension age, ask payroll why. Missing NI can affect your State Pension.", "letter": "No National Insurance was taken from my pay of {{gross}}. Please could you check my NI details." },
+    "ni_ok": { "title": "National Insurance looks right", "explanation": "On pay of {{gross}} we expected about {{expected}}. Your payslip shows {{actual}}.", "action": null, "letter": null },
+    "nmw_under": { "title": "You may be underpaid {{amount}}", "explanation": "For {{hours}} hours, the minimum wage for you is {{minRate}} an hour, so at least {{minimum}}. After money taken for things like uniform or tools, your pay counts as {{counted}}. That is {{effective}} an hour.", "action": "Ask payroll to pay the difference. You can also contact Acas or report it to HMRC for free.", "letter": "For {{hours}} hours I was paid {{counted}} for minimum wage purposes ({{effective}} an hour). The rate for me is {{minRate}} an hour, so I think I am owed about {{amount}}." },
+    "nmw_rate_under": { "title": "Your hourly rate is below minimum wage", "explanation": "Your rate is {{rate}} an hour. The minimum for you is {{minRate}} an hour.", "action": "Ask payroll to put your rate up and pay what you missed. Acas can help for free.", "letter": "My hourly rate is {{rate}}, which is below the {{minRate}} minimum wage rate for my age." },
+    "nmw_ok": { "title": "Your pay is at least the minimum wage", "explanation": "You were paid about {{effective}} an hour. The minimum for you is {{minRate}} an hour.", "action": null, "letter": null },
+    "nmw_unknown": { "title": "Add your hours to check minimum wage", "explanation": "We couldn't see how many hours you worked. With your hours we can check you got at least {{minRate}} an hour.", "action": "Tap Edit and add your hours.", "letter": null },
+    "holiday_missing": { "title": "We can't see any holiday pay", "explanation": "Most workers get 5.6 weeks of paid holiday a year. If you work irregular hours, holiday can be added to each payslip as 12.07% of your pay. It should show as its own line.", "action": "If you haven't taken paid holiday and it isn't on your payslip, ask payroll how it is paid.", "letter": "I can't see any holiday pay on this payslip. Please could you explain how my holiday is paid." },
+    "holiday_ok": { "title": "Holiday pay is on your payslip", "explanation": "We can see a holiday line: {{line}}.", "action": null, "letter": null },
+    "deduction_unknown": { "title": "What is \"{{name}}\"?", "explanation": "{{amount}} was taken for \"{{name}}\". We don't know what this is. Your employer can only take money if the law, your contract, or you in writing allow it.", "action": "Ask payroll what it is for.", "letter": "{{amount}} was taken for \"{{name}}\". Please could you tell me what this is for." },
+    "deduction_check": { "title": "Check \"{{name}}\" ({{amount}})", "explanation": "{{plain}}", "action": "Ask payroll for the details if you didn't agree to it.", "letter": "{{amount}} was taken for \"{{name}}\". Please could you explain this deduction." },
+    "net_gap": { "title": "{{amount}} is missing from your pay", "explanation": "Your pay of {{gross}}, minus the deductions we can see, should leave {{expected}}. You got {{actual}}.", "action": "Ask payroll what the difference is for.", "letter": "After the deductions shown, I expected net pay of {{expected}} but received {{actual}}, a difference of {{amount}}." },
+    "net_extra": { "title": "You got {{amount}} more than we expect", "explanation": "Your pay of {{gross}}, minus the deductions we can see, should leave {{expected}}. You got {{actual}}. Expenses or tax-free payments can explain this.", "action": null, "letter": null },
+    "deductions_ok": { "title": "Your deductions add up", "explanation": "What you got matches your pay minus the deductions shown.", "action": null, "letter": null },
+    "pension_none": { "title": "No pension seen", "explanation": "If you are {{minAge}} or over and earn more than £10,000 a year, your employer should put you in a workplace pension. You can choose to leave it.", "action": "If you didn't opt out, ask payroll about your pension.", "letter": "I can't see a pension contribution on my payslip. Please could you tell me if I have been enrolled in the workplace pension." },
+    "pension_low": { "title": "Your pension looks low", "explanation": "The usual minimum is {{percent}}% of your pay between {{lower}} and {{upper}} this period. That is about {{expected}}. Your payslip shows {{actual}}.", "action": "Ask payroll which pension rules they use. Some schemes work it out differently.", "letter": "My pension contribution was {{actual}}. I expected about {{expected}} under auto-enrolment. Please could you check it." },
+    "pension_ok": { "title": "Your pension looks right", "explanation": "{{actual}} went into your pension. The usual minimum is about {{expected}}.", "action": null, "letter": null }
+  },
+  "letterTemplate": "{{name}}\n{{address}}\n\n{{date}}\n\nTo: Payroll, {{employer}}\n\nQuery about my payslip for {{period}}\n\nHello,\n\nI have checked my payslip for {{period}} and some figures don't look right to me. Please could you look at these points:\n\n{{issues}}\n\nMy tax code on this payslip is {{tax_code}}.\n\nPlease could you check this and let me know what you find. If something is wrong, please correct it on my next payslip. If the figures are right, I would be grateful if you could explain how they were worked out.\n\nThank you,\n\n{{name}}",
+  "links": {
+    "checkTaxCode": { "title": "Check your tax code with HMRC", "url": "https://www.gov.uk/check-income-tax-current-year" },
+    "taxCodes": { "title": "What tax codes mean (GOV.UK)", "url": "https://www.gov.uk/tax-codes" },
+    "taxRefund": { "title": "Claim a tax refund (GOV.UK)", "url": "https://www.gov.uk/claim-tax-refund" },
+    "minimumWage": { "title": "Minimum wage rates (GOV.UK)", "url": "https://www.gov.uk/national-minimum-wage-rates" },
+    "payComplaint": { "title": "Report pay below minimum wage", "url": "https://www.gov.uk/pay-and-work-rights" },
+    "freeHelp": { "title": "Free advice: Acas", "url": "https://www.acas.org.uk/your-wages" },
+    "pensions": { "title": "Workplace pensions (GOV.UK)", "url": "https://www.gov.uk/workplace-pensions" },
+    "holiday": { "title": "Holiday pay (GOV.UK)", "url": "https://www.gov.uk/holiday-entitlement-rights" }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "jurisdiction": "United Kingdom",
+  "freeCustomers": 10,
+  "frequencyOptionsWeeks": [1, 2, 3, 4, 5, 6, 8, 12, 26, 52],
+  "defaultFrequencyWeeks": 4,
+  "rainShiftDays": 1,
+  "evening": {
+    "hour": 18,
+    "minute": 0,
+    "daysAhead": 7,
+    "title": "Tomorrow: {{count}} {{jobs}}, {{area}}",
+    "titleNoArea": "Tomorrow: {{count}} {{jobs}}",
+    "body": "First stop: {{first}}. Worth {{amount}} in all."
+  },
+  "skipReasons": [
+    "Not in",
+    "Gate locked",
+    "Rained off",
+    "Car in the way",
+    "Customer asked to skip",
+    "Ran out of time",
+    "Other"
+  ],
+  "owedTemplates": [
+    {
+      "id": "gentle",
+      "title": "Friendly reminder",
+      "text": "Hi {{name}}, just a friendly note that {{amount}} is still to pay for {{visit_text}} ({{dates}}). No rush, whenever suits you this week. Thank you!{{sign_off}}"
+    },
+    {
+      "id": "bank",
+      "title": "With bank details",
+      "text": "Hi {{name}}, hope you are well. {{amount}} is still to pay for {{visit_text}} ({{dates}}). You can pay by bank transfer{{bank_line}} Or leave it out next time I come round. Thanks very much!{{sign_off}}"
+    },
+    {
+      "id": "second",
+      "title": "Second reminder",
+      "text": "Hi {{name}}, sorry to chase. My records show {{amount}} is still to pay for {{visit_text}} ({{dates}}). If you have already paid, please ignore this and accept my thanks. If not, could you pay when you can? Thank you.{{sign_off}}"
+    }
+  ],
+  "taxYear": {
+    "startMonth": 4,
+    "startDay": 6
+  },
+  "csvHeader": ["date", "customer", "amount", "method"],
+  "tax": {
+    "tradingAllowancePence": 100000,
+    "helpTitle": "Help: GOV.UK working for yourself",
+    "helpURL": "https://www.gov.uk/working-for-yourself",
+    "notes": [
+      "The UK tax year runs from 6 April to 5 April.",
+      "If your income from self-employment is £1,000 or less in a tax year, the trading allowance may mean you don't need to tell HMRC.",
+      "Most sole traders count money when it is paid to them (the cash basis). Jobs not paid yet are shown on their own.",
+      "Online Self Assessment returns are usually due by 31 January after the tax year ends.",
+      "From 6 April 2026, Making Tax Digital for Income Tax applies to sole traders with qualifying income over £50,000. It drops to over £30,000 from April 2027 and over £20,000 from April 2028.",
+      "This export is a record of your jobs. It is not a tax return. Check with HMRC or an accountant before you rely on it."
+    ],
+    "_note": "Trading allowance £1,000 and MTD thresholds (£50k 2026, £30k 2027, £20k 2028) per GOV.UK as of 2026-10; recheck each April."
+  },
+  "search": {
+    "centerLat": 54.5,
+    "centerLon": -3.0,
+    "spanLat": 11.0,
+    "spanLon": 11.0
+  },
+  "paywall": {
+    "headline": "Your whole round, in one book",
+    "bullets": [
+      "Unlimited customers (free is up to 10)",
+      "Best route from where you are",
+      "Polite payment reminders by WhatsApp or text",
+      "Year export for your tax return",
+      "Syncs between your iPhone and iPad"
+    ]
+  },
+  "tapToPayNote": "Taking card payments on your iPhone (Tap to Pay) is planned for a later version. For now, mark card payments taken on your own card reader."
+}
